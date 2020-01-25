@@ -1,0 +1,11 @@
+local variable
+-----------------
+A variable which is declared inside any method body 
+is known as local variable
+
+Rule:
+----
+1.the scope of local variable is only inside that method in which it
+is declared.
+2.Local variable should must be initialized before use
+3.default value is not applicable on local variable.

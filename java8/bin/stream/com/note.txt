@@ -1,0 +1,18 @@
+https://youtu.be/N3gQdIn90CI
+Stream.reduce()
+-------
+This terminal operation performs a reduction on the elements of the stream with the given function.
+ The result is an Optional holding the reduced value.
+ 
+ Parallelism in Java Steam
+ -------------------------
+ With the Fork/Join framework added in Java SE 7,
+ we have efficient machinery for implementing parallel operations in our applications
+ But implementing this framework is itself a complex task; and if not done right;
+ is a source of complex multi-threading bugs having potential to crash the application.
+ With the introduction of internal iteration, we got the possibility of operations to be done in parallel.
+
+To enable parallelism, all you have to do is to create a parallel stream, instead of sequential stream.
+ And to surprise you, this is really very easy. In any of above listed stream examples,
+ anytime you want to particular job using multiple threads in parallel cores,
+ all you have to call method parallelStream() method instead of stream() method.

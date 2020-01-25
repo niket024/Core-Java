@@ -1,0 +1,14 @@
+
+void test();----unimplemented method
+void test1()----implemented method
+{
+
+}
+abstract class
+-----------------
+It is a collection of implemented and unimplemented method
+Rule:
+--------------
+1.We can't create an object of abstract class
+2.When any concrete class inherit abstract class then we must have to override the
+unimplemented method`

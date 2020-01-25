@@ -1,0 +1,16 @@
+loop
+---------------
+steps:
+------
+1.initialization
+2.condition
+3.increment/decrement
+types
+------------
+1.for loop
+2.while loop
+3.do...while
+
+9=foo
+10=loo
+15=fooloo

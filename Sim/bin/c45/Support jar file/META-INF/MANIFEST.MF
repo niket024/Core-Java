@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.1
+Created-By: 14.0-b16 (Sun Microsystems Inc.)
+Main-Class: c45.Main
+Class-Path: lib/mysql-connector-java-3.0.17-ga-bin.jar
+X-COMMENT: Main-Class will be added automatically by build
+

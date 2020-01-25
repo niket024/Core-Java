@@ -1,0 +1,17 @@
+in java totally 8 data type
+------------------
+			default value
+1.byte-0
+2.short-0
+3.int-0
+4.long-0
+5.float-0.0
+6.double-0.0
+
+7.char-[]
+8.boolean-false
+
+
+int i;
+
+pf(i)

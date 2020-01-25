@@ -1,0 +1,3 @@
+static initialization block(SIB)
+-------------------------------
+It is executing only one time and before main method

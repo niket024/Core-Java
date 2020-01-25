@@ -1,0 +1,1 @@
+select * from BUSINESS_EVENT_METADATA;

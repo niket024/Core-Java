@@ -1,0 +1,145 @@
+limitation of Array
+----------------------
+1.it is a collection of similar type of data
+2.we need to give the size at the time of declaration
+3.later we can't change the size
+4.manipulation of data is not possible
+---------------------------
+to overcome on these all limitations and to achieve 
+the data structure concept
+java people has developed 
+
+Collection Framework(API)--java.util package
+------------------------------
+Collection
+	1.List
+	2.Queue
+	3.Set
+	4.Map
+	
+List
+	1.ArrayList
+	2.Vector
+	3.LinkedList
+	
+Queue=FIFO or LILO
+	1.PriorityQueue
+	2.LinkedList
+	
+Set
+	1.HashSet
+	2.LinkedHashSet
+	3.TreeSet
+	
+Map
+	1.HashMap
+	2.LinkedHashMap
+	3.HashTable
+	4.TreeMap
+	
+ConcurrentHashMap
+-----------------------------
+The ConcurrentHashMap is very similar to the java.util.HashTable class, 
+except that ConcurrentHashMap offers better concurrency than HashTable does. 
+ConcurrentHashMap does not lock the Map while you are reading from it. 
+Additionally, ConcurrentHashMap does not lock the entire Map when writing to it. 
+It only locks the part of the Map that is being written to, internally.
+ConcurrentHashMap does not throw ConcurrentModificationException	
+
+When to use ConcurrentHashMap
+-----------------------------
+You should use ConcurrentHashMap when you need very high concurrency in your project.
+It is thread safe without synchronizing the whole map.
+Reads can happen very fast while write is done with a lock.
+There is no locking at the object level.
+The locking is at a much finer granularity at a hashmap bucket level.
+ConcurrentHashMap doesn’t throw a ConcurrentModificationException if one thread tries to modify it while another is iterating over it.
+ConcurrentHashMap uses multitude of locks.
+
+
+Note:
+All classes of collection framework is overriding the
+3 methods of object class
+-------------------
+1.toString()
+2.equals()
+3.hashCode()
+
+	k1,v1
+	
+	boolean add(Object obj)
+	{
+	
+	}
+
+	Integer i1=new Integer(123);
+	add(123);
+	
+	
+	1
+	2
+	3
+	4
+	5
+------------------------------
+			capacity
+ArrayList----10
+	50%
+vector ------10
+	100%
+	
+1-2000
+2-
+---
+3
+4
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+100000-2018
+
+	ABCDEFGHIJKLMNOPQRSTUVWXYZ
+	123456789
+	674
+	FGD
+	abc=123
+	cba=123;
+	
+	
+	12=100
+	21=100
+	a+b+c=123
+	c+b+a=123
+	
+	---------------------
+	1.Create
+	2.update
+	3.delete
+	4.display
+	5.exit
+	enter choice ?
+	1
+	
+	2
+	2
+	2
+	3
+	4
+	5
+	5
+	4
+	5
+	3
+	4
+	
+	2=3
+	3=2
+	4=3
+	5=3

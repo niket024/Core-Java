@@ -1,0 +1,15 @@
+Intermediate operations
+------------------------
+Intermediate operations return the stream itself so you can chain multiple method calls in a row. Let’s learn important ones.
+
+eg. Stream.filter(), Stream.sorted() etc
+Filter accepts a predicate to filter all elements of the stream. 
+This operation is intermediate which enables us to call another stream operation (e.g. forEach) on the result.
+
+Terminal operations
+--------------------
+Terminal operations return a result of a certain type instead of again a Stream.
+
+eg.Stream.forEach(), Stream.collect()
+This method helps in iterating over all elements of a stream and perform some operation on each of them.
+ The operation is passed as lambda expression parameter.

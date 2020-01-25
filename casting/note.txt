@@ -1,0 +1,49 @@
+casting-one data type into another data type
+------------
+1.primitive casting
+	a.autowidening
+	b.explicit narrowing
+2.derived casting
+	a.auto-up casting--super class reference and child class object
+	b.exlplicit down casting--child class reference and super class object
+	
+	byte--- most narrower one
+	short
+	int
+	long
+	float
+	double---most wider one
+----------------------------------
+int i=10;
+double d=890.89;
+
+d=i;//autowidening
+
+i=(int)d//explicit narrowing
+---------------------
+
+int i;
+i=90;
+
+
+class A
+{
+
+}
+
+A a1;--reference----default value=null
+
+a1=new A();----object
+
+A a1=new A();----instance
+
+D-->C-->B-->A
+
+	
+	
+A a1=new A();
+A a2=new B();
+A a3=new C();
+A a4=new D();
+
+	

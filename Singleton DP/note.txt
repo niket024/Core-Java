@@ -1,0 +1,4 @@
+Singleton Design Pattern
+---------------------
+It is pattern in which we are not allowing to create more than one instance of my class.
+We should not allow the user to instansiate class out side that class

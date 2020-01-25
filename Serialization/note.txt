@@ -1,0 +1,26 @@
+Serialization:
+------------------
+process of writing object state into file.
+object state is in binary formate (byte code).
+it is one of the unsecured operation.
+to perform the serialization we need to implements 
+It is a object wise operation
+Serializable interface.
+it is one of the marker interface.
+it is one of the object wise operation
+marker interface
+----------------
+an interface which is not having any method inside their body.
+eg.Serializable,Clonnable,etc
+A a1=new A();
+
+transient keyword
+--------------
+to customize the serialization process.
+which ever variable is having transient keyword that is not
+participating into serialization
+
+Externalization
+---------------------
+To customize the Serialization process
+It is attribute wise operation

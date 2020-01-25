@@ -1,0 +1,9 @@
+File handling  or I/O stream
+----------------------------
+student1
+--------------
+name=abc
+
+student2
+-----------
+name=xyz

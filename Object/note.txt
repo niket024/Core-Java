@@ -1,0 +1,38 @@
+Object----java.lang package
+1.It is a super most class for all class in java
+
+there are totally 11 methods inside this
+-----------------
+1.toString()--it prints the memory address
+2.equals()--It is checking the memory location,if it is same then true otherwidse false
+3.hasCode()---memory address in the form of integer
+4.wait()---overloaded 3 times
+5.notify()
+6.notifyAll()
+7.getClass()
+8.clone()
+9.finalize()
+
+
+How Garbage collector is working in Java?
+---------------------------------------
+or
+How auto memory management of Java is working?
+---------------------------------------
+or
+How finalize() method is working in java?
+--------------------------------------
+When ever any object becomes null then it is useless or abandoned
+means no further use.
+This type of object is simply wasting the memory
+to remove the memory located by these object we need to make a request to garbage collector.
+we can make request to garbage collector by two ways
+1.System.gc()
+2.Runtime.getRuntime().gc();
+Garbage collector is scanning the whole memory and finding the list of null object.
+at the end it is internally calling the finalize() method of Object class to remove
+the all null object.
+
+If null objects are not there then finalize method is not called
+
+

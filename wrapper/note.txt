@@ -1,0 +1,39 @@
+int i=10;-- pd
+
+A a1=new A();-- dd
+
+i=a1;
+a1=i;
+
+wrapper classes
+---------------
+1.byte-Byte
+2.short-Short
+3.int-Integer
+4.long-Long
+5.float-Float
+6.double-Double
+7.char-Character
+8.boolean-Boolean
+
+java.lang
+final classes
+
+2 types
+------------
+1.boxing = primitive-derived
+2.un-boxing = derived-primitive
+
+eg.1
+int i=10;
+Integer i1=new Integer(i);
+sop(i1)//10
+
+eg.2
+int j=i1.intValue();
+sop(j)
+
+from jdk1.5 onwards
+---------------
+1.auto boxing
+2.auto unboxing

@@ -1,0 +1,11 @@
+final
+-------------
+3 scope
+-------
+1.variable
+	a.we must have to initialize the final var at the time declararion
+	b.we can't change the value of final var
+2.method
+	a.we can't override the final method
+3.class
+	a.we can't extends the final class

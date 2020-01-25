@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="C:/nik/Java Techologies/JavaMail/activation.jar"/>
+	<classpathentry kind="lib" path="C:/nik/Java Techologies/JavaMail/dsn.jar"/>
+	<classpathentry kind="lib" path="C:/nik/Java Techologies/JavaMail/imap.jar"/>
+	<classpathentry kind="lib" path="C:/nik/Java Techologies/JavaMail/mail.jar"/>
+	<classpathentry kind="lib" path="C:/nik/Java Techologies/JavaMail/mailapi.jar"/>
+	<classpathentry kind="lib" path="C:/nik/Java Techologies/JavaMail/pop3.jar"/>
+	<classpathentry kind="lib" path="C:/nik/Java Techologies/JavaMail/smtp.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,29 @@
+Exception:
+--------------------------------
+It is an abnormal condition
+eg.
+10/0
+
+Throwable--java.lang
+	1.Exception
+	2.Error
+Exception
+	RuntimeException(unchecked exception)--try catch is not mandatory for compiling
+		1.Arithmetic
+		2.classcast
+		3.ArrayIndex...
+		4.Nullpointer
+		5.NumberFormat
+		etc
+(checked exception)---try catch is mandatory for compiling
+1.Sql
+2.IO
+3.classnotfound exception
+4.filenotfound
+5.Interrupted
+etc
+Error
+	1.StackkoverFlow
+	2.Assertion
+	3.Nosuchmethod
+	etc

@@ -1,0 +1,31 @@
+opps Features
+--------------
+1.Encapsulation
+2.Inheritance
+3.Poly morphism
+4.Abstraction
+
+class A
+{
+	members types
+		1.member variable
+		2.member function
+	members categories
+		1.static
+		2.non static
+}
+
+Static
+---------------
+1.It can be used any where in the program
+2.static members are dependent on class name
+3.static members are loading during class load
+non-static
+------------
+1.It cannot be used in static method without object
+2.It is dependent on object
+3.It is loading while creating an object
+
+
+Note:
+Local variable is having more precedence than global valriable

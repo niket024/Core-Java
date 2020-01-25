@@ -1,0 +1,4 @@
+Method Overloading
+------------------
+When we have same method name with different no of arguments
+or different type of arguments then it is called method overloading

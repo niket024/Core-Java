@@ -1,0 +1,6 @@
+Access modifiers
+-------------
+1.private--only in the same class
+2.protected--in the same package or child class of different package
+3.default--only in same package
+4.public--any where in the workspace

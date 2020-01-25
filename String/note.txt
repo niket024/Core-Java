@@ -1,0 +1,58 @@
+String :It is one of the final class --java.lang
+You can create String class object by two ways:
+1.With new keyword
+2.without new keyword
+memory
+----
+	1.heap-only for storage purpose
+	2.stack-only for execution purpose
+pool
+-----
+1.constant pool
+2.non constant pool
+
+string operation
+-------------
+1.concatanation
+2.comparision
+3.substring(Extraction)
+4.copying
+
+mutable---once it is created it can change
+immutable---once it is created we can't change
+
+
+
+Reg
+-----
+1.void register()
+{
+
+}
+2.void display()
+{
+
+}
+
+Login extends Reg
+-----------------
+1.void login()
+{
+
+}
+2. void validate()
+{
+
+}
+3.main()
+{
+ register()
+ login()
+ validate()
+}
+
+String S1 = "kjkjfhdkjh jlkfjlkfdj lkjglkjdlkgj lkj;lgktr;lk hjgrlijr"
+String S2 = "kjkjfh@dkjh jlkfjlk@fdj lkjglkjd@lkgj lkj;lgkt@r;lk hjgrl@ijr" //#
+
+
+

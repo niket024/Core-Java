@@ -1,0 +1,6 @@
+Inner class(Nested class)
+------------------------
+1.static inner class
+2.non-static inner class(instance inner class)
+3.Local inner class
+4.Annonymous inner class

@@ -1,0 +1,20 @@
+class final System
+{
+int i;
+static PrintStream out;
+
+}
+
+class PrintStream
+{
+public void println()
+{
+	
+}
+
+}
+
+System.out.println()
+
+is-a---extends
+has-a-having one property of another class type

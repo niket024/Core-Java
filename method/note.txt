@@ -1,0 +1,38 @@
+method-It is a self content block of statements
+	1.declaration--not in java
+	2.definition
+	3.calling
+type:
+	1.library
+	2.user defined
+	
+categories:
+	1.without arg and without return type
+	2.with arg without return type
+	3.without arg with return type
+	4.with arg with return type
+	
+	void test(); --not in java
+	void test()
+	{
+	
+	}
+	test();
+	
+Advantages:
+--------------
+1.Easy debugging
+2.Readability
+3.Re-usability
+4.less chance of breaking functionality
+
+Homework:
+-----------------
+Area
+	1.circle
+	2.triangle
+	3.rectangle
+	4.square
+	
+	
+	

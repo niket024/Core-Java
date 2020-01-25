@@ -1,0 +1,7 @@
+Annotation
+------------
+it is providing meta information about class, method and variable
+
+1.@override
+2.@deprecated
+3.@SuppressWarnings

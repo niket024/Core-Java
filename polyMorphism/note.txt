@@ -1,0 +1,17 @@
+polymorphism
+------------------
+many form
+concepts needs
+-------------
+1.inheritance
+2.method overriding
+3.casting
+
+A a1 = new B();
+
+int i;
+double d;
+
+d= i;
+
+i = d;

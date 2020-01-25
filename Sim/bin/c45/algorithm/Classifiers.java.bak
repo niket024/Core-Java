@@ -1,0 +1,638 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package c45.algorithm;
+
+import c45.preprocess.Utils;
+import c45.preprocess.Instance;
+import c45.preprocess.FastVector;
+import c45.preprocess.OptionHandler;
+import c45.preprocess.Instances;
+import c45.preprocess.SerializedObject;
+import c45.preprocess.Attribute;
+import java.io.FileWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+/**
+ *
+ * @author admin
+ */
+
+public class Classifiers {
+    
+ /** The main set of instances we're playing with */
+  protected Instances m_Instances;
+
+   /** A thread that classification runs in */
+  protected Thread m_RunThread;
+
+   /** The user-supplied test set (if any) */
+  protected Instances m_TestInstances;
+
+   /** Lets the user configure the classifier */
+  protected GenericObjectEditor m_ClassifierEditor = new GenericObjectEditor();
+
+   /**
+   * Tells the panel to use a new set of instances.
+   *
+   * @param inst a set of Instances
+   */
+  public void setInstances(Instances inst) {
+
+    m_Instances = inst;
+
+    String [] attribNames = new String [m_Instances.numAttributes()];
+    for (int i = 0; i < attribNames.length; i++) {
+      String type = "";
+      switch (m_Instances.attribute(i).type()) {
+      case Attribute.NOMINAL:
+	type = "(Nom) ";
+	break;
+      case Attribute.NUMERIC:
+	type = "(Num) ";
+	break;
+      case Attribute.STRING:
+	type = "(Str) ";
+	break;
+      case Attribute.DATE:
+	type = "(Dat) ";
+	break;
+      default:
+	type = "(???) ";
+      }
+      attribNames[i] = type + m_Instances.attribute(i).name();
+    }
+   // m_ClassCombo.setModel(new DefaultComboBoxModel(attribNames));
+  /*  if (attribNames.length > 0) {
+      m_ClassCombo.setSelectedIndex(attribNames.length - 1);
+      m_ClassCombo.setEnabled(true);
+      m_StartBut.setEnabled(m_RunThread == null);
+      m_StopBut.setEnabled(m_RunThread != null);
+    } else {
+      m_StartBut.setEnabled(false);
+      m_StopBut.setEnabled(false);
+    }*/
+  }
+
+
+
+    /**
+   * Starts running the currently configured classifier with the current
+   * settings. This is run in a separate thread, and will only start if
+   * there is no classifier already running. The classifier output is sent
+   * to the results history panel.
+   */
+  public void startClassifier(final Instances  m_Instances) {
+
+    if (m_RunThread == null) {
+    /*  synchronized (this) {
+	//m_StartBut.setEnabled(false);
+	//m_StopBut.setEnabled(true);
+      }*/
+
+        this.m_Instances= m_Instances;
+      m_RunThread = new Thread() {
+	public void run() {
+	  // Copy the current state of things
+	  System.out.println("Setting up...");
+	  CostMatrix costMatrix = null;
+	  Instances inst = new Instances(m_Instances);
+	  Instances userTest = null;
+	  // additional vis info (either shape type or point size)
+	  FastVector plotShape = new FastVector();
+	  FastVector plotSize = new FastVector();
+	  Instances predInstances = null;
+          m_ClassifierEditor.setClassType(Classifier.class);
+          m_ClassifierEditor.setValue(new c45.algorithm.binary.C4());
+  
+         // System.out.println("m_ClassifierEditor.getValue();"+m_ClassifierEditor.getValue());
+
+          // will hold the prediction objects if the class is nominal
+          FastVector predictions = null;
+          System.out.print("sdsdsadsdsd");
+          // for timing
+	  long trainTimeStart = 0, trainTimeElapsed = 0;
+
+	  if (m_TestInstances != null) {
+	    userTest = new Instances(m_TestInstances);
+	  }
+	/*  if (m_EvalWRTCostsBut.isSelected()) {
+	    costMatrix = new CostMatrix((CostMatrix) m_CostMatrixEditor
+					.getValue());
+	  }*/
+	  boolean outputModel = true;//m_OutputModelBut.isSelected();
+	  boolean outputConfusion = true;//m_OutputConfusionBut.isSelected();
+	  boolean outputPerClass = true;// m_OutputPerClassBut.isSelected();
+	  boolean outputSummary = true;
+          boolean outputEntropy = true;//m_OutputEntropyBut.isSelected();
+	  boolean saveVis = true;//m_StorePredictionsBut.isSelected();
+	  boolean outputPredictionsText = true;//m_OutputPredictionsTextBut.isSelected();
+
+	  String grph = null;
+
+	  int testMode = 0;
+	  int numFolds = 10, percent = 66;
+         
+          Classifier classifier = (Classifier) m_ClassifierEditor.getValue();
+          Classifier template = null;
+	  try {
+	    template = Classifier.makeCopy(classifier);
+	  } catch (Exception ex) {
+	    System.out.println("Problem copying classifier: " + ex.getMessage());
+	  }
+	/*888888888888888888  int classIndex = m_ClassCombo.getSelectedIndex();
+	  Classifier classifier = (Classifier) m_ClassifierEditor.getValue();
+	  Classifier template = null;
+	  try {
+	    template = Classifier.makeCopy(classifier);
+	  } catch (Exception ex) {
+	    m_Log.logMessage("Problem copying classifier: " + ex.getMessage());
+	  }*/
+	  Classifier fullClassifier = null;
+	  StringBuffer outBuff = new StringBuffer();
+	  String name = (new SimpleDateFormat("HH:mm:ss - ")).format(new Date());
+          try {
+
+              String cname = classifier.getClass().getName();
+         // System.out.println("cname"+cname);
+          }catch(Exception e){
+               System.out.println("ghjgjjhjhjhjkjk"+e.toString());
+
+          }
+	/*  String cname = classifier.getClass().getName();
+	  if (cname.startsWith("c45.algorithm.")) {
+	    name += cname.substring("c45.algorithm.".length());
+	  } else {
+	    name += cname;
+	  }*/
+	  try {
+	   /* if (m_CVBut.isSelected()) {
+	      testMode = 1;
+	      numFolds = Integer.parseInt(m_CVText.getText());
+	      if (numFolds <= 1) {
+		throw new Exception("Number of folds must be greater than 1");
+	      }
+	    } else if (m_PercentBut.isSelected()) {
+	      testMode = 2;
+	      percent = Integer.parseInt(m_PercentText.getText());
+	      if ((percent <= 0) || (percent >= 100)) {
+		throw new Exception("Percentage must be between 0 and 100");
+	      }
+	    } if(m_TrainBut.isSelected()) {*/
+	      testMode = 3;
+	    /*} else if (m_TestSplitBut.isSelected()) {
+	      testMode = 4;
+	      // Check the test instance compatibility
+	      if (userTest == null) {
+		throw new Exception("No user test set has been opened");
+	      }
+	      if (!inst.equalHeaders(userTest)) {
+		throw new Exception("Train and test set are not compatible");
+	      }
+	      userTest.setClassIndex(classIndex);
+	    } else {
+	      throw new Exception("Unknown test mode");
+	    }*/
+	   /***88 inst.setClassIndex(classIndex);*/
+
+	    // set up the structure of the plottable instances for
+	    // visualization
+	 //   predInstances = setUpVisualizableInstances(inst);
+	 //   predInstances.setClassIndex(inst.classIndex()+1);
+              inst.setClassIndex(12);
+	    if (inst.classAttribute().isNominal()) {
+	      predictions = new FastVector();
+	    }
+	    // Output some header information
+	  // System.out.println("Started " + cname);
+	 /*   if (m_Log instanceof TaskLogger) {
+	      ((TaskLogger)m_Log).taskStarted();
+	    }*/
+	    outBuff.append("=== Run information ===\n\n");
+	    //outBuff.append("Scheme:       " + cname);
+	    if (classifier instanceof OptionHandler) {
+	      String [] o = ((OptionHandler) classifier).getOptions();
+	      outBuff.append(" " + Utils.joinOptions(o));
+	    }
+	    outBuff.append("\n");
+	    outBuff.append("Relation:     " + inst.relationName() + '\n');
+	    outBuff.append("Instances:    " + inst.numInstances() + '\n');
+	    outBuff.append("Attributes:   " + inst.numAttributes() + '\n');
+	    if (inst.numAttributes() < 100) {
+	      for (int i = 0; i < inst.numAttributes(); i++) {
+		outBuff.append("              " + inst.attribute(i).name()
+			       + '\n');
+	      }
+	    } else {
+	      outBuff.append("             [list of attributes omitted]\n");
+	    }
+
+	    outBuff.append("Test mode:    ");
+	    switch (testMode) {
+	      case 3: // Test on training
+	      outBuff.append("evaluate on training data\n");
+	      break;
+	      case 1: // CV mode
+	      outBuff.append("" + numFolds + "-fold cross-validation\n");
+	      break;
+	      case 2: // Percent split
+	      outBuff.append("split " + percent
+			       + "% train, remainder test\n");
+	      break;
+	      case 4: // Test on user split
+	      outBuff.append("user supplied test set: "
+			     + userTest.numInstances() + " instances\n");
+	      break;
+	    }
+            if (costMatrix != null) {
+               outBuff.append("Evaluation cost matrix:\n")
+               .append(costMatrix.toString()).append("\n");
+            }
+	    outBuff.append("\n");
+
+         /////////////////  // m_History.addResult(name, outBuff);
+        ///////////////////////  /////////////////m_History.setSingle(name);
+
+	    // Build the model and output it.
+	    if (outputModel || (testMode == 3) || (testMode == 4)) {
+	      System.out.println("Building model on training data...");
+
+	      trainTimeStart = System.currentTimeMillis();
+             classifier.buildClassifier(inst);
+        //     System.out.println("dfd"+classifier.toString());
+	      trainTimeElapsed = System.currentTimeMillis() - trainTimeStart;
+
+
+	    }
+
+	    if (outputModel) {
+	      outBuff.append("=== Classifier model (full training set) ===\n\n");
+	      outBuff.append(classifier.toString() + "\n");
+	      outBuff.append("\nTime taken to build model: " +
+			     Utils.doubleToString(trainTimeElapsed / 1000.0,2)
+			     + " seconds\n\n");
+           
+
+
+
+
+	   ////////////////   m_History.updateResult(name);
+	    /*  if (classifier instanceof Drawable) {
+		grph = null;
+		try {
+		  grph = ((Drawable)classifier).graph();
+		} catch (Exception ex) {
+		}*/
+	      // copy full model for output
+	    //  SerializedObject so = new SerializedObject(classifier);
+	    //  fullClassifier = (Classifier) so.getObject();
+	    }
+/*
+	    Evaluation eval = null;
+	    switch (testMode) {
+	      case 3: // Test on training
+	      System.out.println("Evaluating on training data...");
+	      eval = new Evaluation(inst, costMatrix);
+
+	      if (outputPredictionsText) {
+		outBuff.append("=== Predictions on training set ===\n\n");
+		outBuff.append(" inst#,    actual, predicted, error");
+		if (inst.classAttribute().isNominal()) {
+		  outBuff.append(", probability distribution");
+		}
+		outBuff.append("\n");
+	      }
+
+	      for (int jj=0;jj<inst.numInstances();jj++) {
+		processClassifierPrediction(inst.instance(jj), classifier,
+					    eval, predictions,
+					    predInstances, plotShape,
+					    plotSize);
+
+		if (outputPredictionsText) {
+		  outBuff.append(predictionText(classifier, inst.instance(jj), jj+1));
+		}
+		if ((jj % 100) == 0) {
+		 System.out.println("Evaluating on training data. Processed "
+				      +jj+" instances...");
+		}
+	      }
+	      if (outputPredictionsText) {
+		outBuff.append("\n");
+	      }
+	      outBuff.append("=== Evaluation on training set ===\n");
+	      break;
+
+	      case 1: // CV mode
+	      System.out.println("Randomizing instances...");
+	      int rnd = 1;
+	      try {
+		rnd = Integer.parseInt(m_RandomSeedText.getText().trim());
+		// System.err.println("Using random seed "+rnd);
+	      } catch (Exception ex) {
+		System.out.println("Trouble parsing random seed value");
+		rnd = 1;
+	      }
+	      Random random = new Random(rnd);
+	      inst.randomize(random);
+	      if (inst.attribute(classIndex).isNominal()) {
+		System.out.println("Stratifying instances...");
+		inst.stratify(numFolds);
+	      }
+	      eval = new Evaluation(inst, costMatrix);
+
+	      if (outputPredictionsText) {
+		outBuff.append("=== Predictions on test data ===\n\n");
+		outBuff.append(" inst#,    actual, predicted, error");
+		if (inst.classAttribute().isNominal()) {
+		  outBuff.append(", probability distribution");
+		}
+		outBuff.append("\n");
+	      }
+
+	      // Make some splits and do a CV
+	      for (int fold = 0; fold < numFolds; fold++) {
+		System.out.println("Creating splits for fold "
+				    + (fold + 1) + "...");
+		Instances train = inst.trainCV(numFolds, fold, random);
+		eval.setPriors(train);
+		System.out.println("Building model for fold "
+				    + (fold + 1) + "...");
+		Classifier current = null;
+		try {
+		  current = Classifier.makeCopy(template);
+		} catch (Exception ex) {
+		  System.out.println("Problem copying classifier: " + ex.getMessage());
+		}
+		current.buildClassifier(train);
+		Instances test = inst.testCV(numFolds, fold);
+		m_Log.statusMessage("Evaluating model for fold "
+				    + (fold + 1) + "...");
+		for (int jj=0;jj<test.numInstances();jj++) {
+		  processClassifierPrediction(test.instance(jj), current,
+					      eval, predictions,
+					      predInstances, plotShape,
+					      plotSize);
+		  if (outputPredictionsText) {
+		    outBuff.append(predictionText(current, test.instance(jj), jj+1));
+		  }
+		}
+	      }
+	      if (outputPredictionsText) {
+		outBuff.append("\n");
+	      }
+	      if (inst.attribute(classIndex).isNominal()) {
+		outBuff.append("=== Stratified cross-validation ===\n");
+	      } else {
+		outBuff.append("=== Cross-validation ===\n");
+	      }
+	      break;
+
+	      case 2: // Percent split
+	      m_Log.statusMessage("Randomizing instances...");
+	      try {
+		rnd = Integer.parseInt(m_RandomSeedText.getText().trim());
+	      } catch (Exception ex) {
+		m_Log.logMessage("Trouble parsing random seed value");
+		rnd = 1;
+	      }
+	      inst.randomize(new Random(rnd));
+	      int trainSize = inst.numInstances() * percent / 100;
+	      int testSize = inst.numInstances() - trainSize;
+	      Instances train = new Instances(inst, 0, trainSize);
+	      Instances test = new Instances(inst, trainSize, testSize);
+	      m_Log.statusMessage("Building model on training split...");
+	      Classifier current = null;
+	      try {
+		current = Classifier.makeCopy(template);
+	      } catch (Exception ex) {
+		m_Log.logMessage("Problem copying classifier: " + ex.getMessage());
+	      }
+	      current.buildClassifier(train);
+	      eval = new Evaluation(train, costMatrix);
+	      m_Log.statusMessage("Evaluating on test split...");
+
+	      if (outputPredictionsText) {
+		outBuff.append("=== Predictions on test split ===\n\n");
+		outBuff.append(" inst#,    actual, predicted, error");
+		if (inst.classAttribute().isNominal()) {
+		  outBuff.append(", probability distribution");
+		}
+		outBuff.append("\n");
+	      }
+
+	      for (int jj=0;jj<test.numInstances();jj++) {
+		processClassifierPrediction(test.instance(jj), current,
+					    eval, predictions,
+					    predInstances, plotShape,
+					    plotSize);
+		if (outputPredictionsText) {
+		    outBuff.append(predictionText(current, test.instance(jj), jj+1));
+		}
+		if ((jj % 100) == 0) {
+		  m_Log.statusMessage("Evaluating on test split. Processed "
+				      +jj+" instances...");
+		}
+	      }
+	      if (outputPredictionsText) {
+		outBuff.append("\n");
+	      }
+	      outBuff.append("=== Evaluation on test split ===\n");
+	      break;
+
+	      case 4: // Test on user split
+	      m_Log.statusMessage("Evaluating on test data...");
+	      eval = new Evaluation(inst, costMatrix);
+
+	      if (outputPredictionsText) {
+		outBuff.append("=== Predictions on test set ===\n\n");
+		outBuff.append(" inst#,    actual, predicted, error");
+		if (inst.classAttribute().isNominal()) {
+		  outBuff.append(", probability distribution");
+		}
+		outBuff.append("\n");
+	      }
+
+	      for (int jj=0;jj<userTest.numInstances();jj++) {
+		processClassifierPrediction(userTest.instance(jj), classifier,
+					    eval, predictions,
+					    predInstances, plotShape,
+					    plotSize);
+		if (outputPredictionsText) {
+		  outBuff.append(predictionText(classifier, userTest.instance(jj), jj+1));
+		}
+		if ((jj % 100) == 0) {
+		  m_Log.statusMessage("Evaluating on test data. Processed "
+				      +jj+" instances...");
+		}
+	      }
+	      if (outputPredictionsText) {
+		outBuff.append("\n");
+	      }
+	      outBuff.append("=== Evaluation on test set ===\n");
+	      break;
+
+	      default:
+	      throw new Exception("Test mode not implemented");
+	    }
+
+	    if (outputSummary) {
+	      outBuff.append(eval.toSummaryString(outputEntropy) + "\n");
+	    }
+
+	    if (inst.attribute(classIndex).isNominal()) {
+
+	      if (outputPerClass) {
+		outBuff.append(eval.toClassDetailsString() + "\n");
+	      }
+
+	      if (outputConfusion) {
+		outBuff.append(eval.toMatrixString() + "\n");
+	      }
+	    }
+
+	    m_History.updateResult(name);
+	    m_Log.logMessage("Finished " + cname);
+	    m_Log.statusMessage("OK");
+	  } catch (Exception ex) {
+	    ex.printStackTrace();
+	    m_Log.logMessage(ex.getMessage());
+	    JOptionPane.showMessageDialog(ClassifierPanel.this,
+					  "Problem evaluating classifier:\n"
+					  + ex.getMessage(),
+					  "Evaluate classifier",
+					  JOptionPane.ERROR_MESSAGE);
+	    m_Log.statusMessage("Problem evaluating classifier");
+	  } finally {
+	    try {
+	      if (predInstances != null && predInstances.numInstances() > 0) {
+		if (predInstances.attribute(predInstances.classIndex())
+		    .isNumeric()) {
+		  postProcessPlotInfo(plotSize);
+		}
+		m_CurrentVis = new VisualizePanel();
+		m_CurrentVis.setName(name+" ("+inst.relationName()+")");
+		m_CurrentVis.setLog(m_Log);
+		PlotData2D tempd = new PlotData2D(predInstances);
+		tempd.setShapeSize(plotSize);
+		tempd.setShapeType(plotShape);
+		tempd.setPlotName(name+" ("+inst.relationName()+")");
+		tempd.addInstanceNumberAttribute();
+
+		m_CurrentVis.addPlot(tempd);
+		m_CurrentVis.setColourIndex(predInstances.classIndex()+1);
+
+		if (saveVis) {
+		  FastVector vv = new FastVector();
+		  if (outputModel) {
+		    vv.addElement(fullClassifier);
+		    Instances trainHeader = new Instances(m_Instances, 0);
+		    trainHeader.setClassIndex(classIndex);
+		    vv.addElement(trainHeader);
+		  }
+		  vv.addElement(m_CurrentVis);
+		  if (grph != null) {
+		    vv.addElement(grph);
+		  }
+		  if (predictions != null) {
+		    vv.addElement(predictions);
+		    vv.addElement(inst.classAttribute());
+		  }
+		  m_History.addObject(name, vv);
+		} else if (outputModel) {
+		  FastVector vv = new FastVector();
+		  vv.addElement(fullClassifier);
+		  Instances trainHeader = new Instances(m_Instances, 0);
+		  trainHeader.setClassIndex(classIndex);
+		  vv.addElement(trainHeader);
+		  m_History.addObject(name, vv);
+		}
+	      }*/
+	    } catch (Exception ex) {
+	      ex.printStackTrace();
+	    }
+
+	   /* if (isInterrupted()) {
+	      m_Log.logMessage("Interrupted " + cname);
+	      m_Log.statusMessage("Interrupted");
+	    }*/
+
+	/*    synchronized (this) {
+	      m_StartBut.setEnabled(true);
+	      m_StopBut.setEnabled(false);
+	      m_RunThread = null;
+	    }*/
+	    /*if (m_Log instanceof TaskLogger) {
+              ((TaskLogger)m_Log).taskFinished();
+            }*/
+        }
+	//}
+      };
+      m_RunThread.setPriority(Thread.MIN_PRIORITY);
+      m_RunThread.start();
+    
+  }
+}
+
+  protected String predictionText(Classifier classifier, Instance inst, int instNum) throws Exception {
+
+    //> inst#   actual   predicted   error  probability distribution
+
+    StringBuffer text = new StringBuffer();
+    // inst #
+    text.append(Utils.padLeft("" + instNum, 6) + " ");
+    if (inst.classAttribute().isNominal()) {
+
+      // actual
+      if (inst.classIsMissing()) text.append(Utils.padLeft("?", 10) + " ");
+      else text.append(Utils.padLeft("" + ((int) inst.classValue()+1) + ":"
+				+ inst.stringValue(inst.classAttribute()), 10) + " ");
+
+      // predicted
+      double[] probdist = null;
+      double pred;
+      if (inst.classAttribute().isNominal()) {
+	probdist = classifier.distributionForInstance(inst);
+	pred = (double) Utils.maxIndex(probdist);
+	if (probdist[(int) pred] <= 0.0) pred = Instance.missingValue();
+      } else {
+	pred = classifier.classifyInstance(inst);
+      }
+      text.append(Utils.padLeft((Instance.isMissingValue(pred) ? "?" :
+				 (((int) pred+1) + ":"
+				 + inst.classAttribute().value((int) pred))), 10) + " ");
+      // error
+      if (pred == inst.classValue()) text.append(Utils.padLeft(" ", 6) + " ");
+      else text.append(Utils.padLeft("+", 6) + " ");
+
+      // prob dist
+      if (inst.classAttribute().type() == Attribute.NOMINAL) {
+	for (int i=0; i<probdist.length; i++) {
+	  if (i == (int) pred) text.append(" *");
+	  else text.append("  ");
+	  text.append(Utils.doubleToString(probdist[i], 5, 3));
+	}
+      }
+    } else {
+
+      // actual
+      if (inst.classIsMissing()) text.append(Utils.padLeft("?", 10) + " ");
+      else text.append(Utils.doubleToString(inst.classValue(), 10, 3) + " ");
+
+      // predicted
+      double pred = classifier.classifyInstance(inst);
+      if (Instance.isMissingValue(pred)) text.append(Utils.padLeft("?", 10) + " ");
+      else text.append(Utils.doubleToString(pred, 10, 3) + " ");
+
+      // err
+      if (!inst.classIsMissing() && !Instance.isMissingValue(pred))
+	text.append(Utils.doubleToString(pred - inst.classValue(), 10, 3));
+    }
+    text.append("\n");
+    return text.toString();
+  }   
+
+}
