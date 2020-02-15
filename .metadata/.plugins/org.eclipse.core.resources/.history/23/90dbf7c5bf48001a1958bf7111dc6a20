@@ -1,0 +1,8 @@
+package problem;
+
+public class ListFilter {
+public static void main(String[] args) {
+	String input = "(1,45,X)+(2,45,Y)+(0,89,T)+(3,90,P)";
+	
+}
+}

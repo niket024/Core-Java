@@ -1,0 +1,33 @@
+package com.nik.problems;
+
+
+import java.util.Stack;
+
+public class BalancingString {
+	public static void main(String[] args) {
+		String str = "{{(())}}{}[] {}{";
+		Stack<Character> stack = new Stack<Character>();
+		boolean flag = false;
+		for (int i = 0; i < str.length(); i++) {
+			char c = str.charAt(i);
+			if (c == '{' || c == '(' || c == '[') {
+				stack.push(c);
+			} else if (!stack.isEmpty() && (c == '}' && stack.pop() == '{')) {
+				flag = true;
+			} else if ((!stack.isEmpty() && c == ')' && stack.pop() == '(')) {
+				flag = true;
+			} else if ((!stack.isEmpty() && c == ']' && stack.pop() == '[')) {
+				flag = true;
+			}
+		}
+		if (!stack.isEmpty()) {
+			flag = false;
+		}
+		if (flag) {
+			System.out.println("String is balanced");
+		} else {
+			System.out.println("String is not balanced");
+		}
+
+	}
+}

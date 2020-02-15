@@ -12,6 +12,7 @@ public class ForEachList {
 		for (Integer i : list) {
 			System.out.println(i);
 		}
+		
 		// After Java8
 		System.out.println("------------Iterating by passing method reference---------------");
 

@@ -119,7 +119,8 @@ public class BinaryTree {
 			} else {
 				return (rHeight + 1);
 			}
-			//return 1+ Math.max(getHeightOfBinaryTree(root.left), getHeightOfBinaryTree(root.right));
+			// return 1+ Math.max(getHeightOfBinaryTree(root.left),
+			// getHeightOfBinaryTree(root.right));
 		}
 	}
 
@@ -150,6 +151,67 @@ public class BinaryTree {
 			return ((root != null && root1 != null) && (root.data == root1.data) && isIdentical(root.left, root1.left)
 					&& isIdentical(root.right, root1.right));
 		}
+	}
+
+	public void findAvgAtLevel(Node root) {
+		Queue<Node> queue = new ArrayDeque<Node>();
+		queue.add(root);
+		int sum = 0;
+		while (!queue.isEmpty()) {
+			int count = queue.size();
+			int no = count;
+			sum = 0;
+			while (count >= 1) {
+				Node node = queue.poll();
+				if (node != null) {
+					sum += node.data;
+					if (node.left != null)
+						queue.add(node.left);
+					if (node.right != null)
+						queue.add(node.right);
+				}
+				count--;
+			}
+			System.out.println(sum / no);
+		}
+	}
+
+	public void printZigZag(Node root) {
+		Stack<Node> s1 = new Stack<Node>();
+		Stack<Node> s2 = new Stack<Node>();
+		s1.push(root);
+		while (!s1.isEmpty() || !s2.isEmpty()) {
+			System.out.println("\n------------------");
+			while (!s1.isEmpty()) {
+				Node node = s1.pop();
+				System.out.print(node.data + " ");
+				if (node.left != null)
+					s2.push(node.left);
+				if (node.right != null)
+					s2.push(node.right);
+			}
+			System.out.println("\n------------------");
+
+			while (!s2.isEmpty()) {
+				Node node = s2.pop();
+				System.out.print(node.data + " ");
+				if (node.right != null)
+					s1.push(node.right);
+				if (node.left != null)
+					s1.push(node.left);
+			}
+		}
+	}
+
+	public void printLeafNode(Node root) {
+		if (root != null) {
+			if (root.left == null && root.right == null) {
+				System.out.println(root.data);
+			}
+			printLeafNode(root.left);
+			printLeafNode(root.right);
+		}
+
 	}
 
 }

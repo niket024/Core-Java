@@ -1,0 +1,48 @@
+package test;
+
+import java.time.Duration;
+import java.time.Instant;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+public class A {
+	public static void main(String[] args) {
+		// programming way
+		int x = 90;
+		String stmt = "";
+		if (x > 50) {
+			stmt = "heavy";
+		} else {
+			stmt = "Not heavy";
+		}
+		System.out.println(stmt);
+
+		// expressive way
+		System.out.println(x > 50 ? "heavy" : "not heavy");
+		List<Integer> list = IntStream.range(0, 5000).boxed().collect(Collectors.toList());
+		getEven(list);
+	}
+
+	private static void getEven(List<Integer> list) {
+		Instant start1 = Instant.now();
+		// not scalable
+		for (int i : list) {
+			if (i % 2 == 0) {
+				System.out.println(i);
+			}
+		}
+		Instant end1 = Instant.now();
+		System.out.println("Time taen without lambda " + Duration.between(start1, end1).toMillis());
+
+		System.out.println("------------------");
+		// scalable
+		Instant start2 = Instant.now();
+
+		list.stream().filter(i -> i % 2 == 0).forEach(System.out::println);
+		Instant end2 = Instant.now();
+		System.out.println("Time taen with lambda " + Duration.between(start2, end2).toMillis());
+
+	}
+
+}
