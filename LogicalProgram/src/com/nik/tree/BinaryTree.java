@@ -221,6 +221,7 @@ public class BinaryTree {
 		if (rootNode == null) {
 			return;
 		} else {
+			
 			if (map.containsKey(hd)) {
 				List<Integer> list = map.get(hd);
 				list.add(rootNode.data);
