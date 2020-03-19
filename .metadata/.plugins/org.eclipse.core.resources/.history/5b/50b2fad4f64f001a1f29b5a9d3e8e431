@@ -1,0 +1,43 @@
+package com.nik.problems;
+
+public class SpiralArray2D {
+	public static void main(String[] args) {
+		int n = 5;
+		int arr[][] = genSpiral(n);
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				System.out.print(arr[i][j] + "\t");
+			}
+			System.out.println();
+		}
+	}
+
+	public static int[][] genSpiral(int n) {
+		int spiral[][] = new int[n][n];
+		int k = 0, l = 0;
+		int i = 0;
+		int max_row = n - 1, col_max = n - 1;
+		int value = 0;
+		while (k <= max_row && l <= col_max) {
+			for (i = l; i <= col_max; i++) {
+				spiral[k][i] = ++value;
+			}
+			k++;
+			for (i = k; i <= max_row; i++) {
+				spiral[i][col_max] = ++value;
+			}
+			col_max--;
+			for (i = col_max; i >= l; i--) {
+				spiral[max_row][i] = ++value;
+			}
+			max_row--;
+
+			for (i = max_row; i >= k; i--) {
+				spiral[i][l] = ++value;
+			}
+			l++;
+
+		}
+		return spiral;
+	}
+}

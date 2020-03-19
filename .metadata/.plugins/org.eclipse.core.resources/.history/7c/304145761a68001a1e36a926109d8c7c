@@ -1,0 +1,35 @@
+package com.nik.problems;
+
+import java.lang.reflect.Field;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+
+public class HexToASCII {
+	public static void main(String[] args) throws Exception {
+	      String hex = "C1C6F0F0F0F1";
+	      System.setProperty("file.encoding","UTF-8");
+	      Field charset = Charset.class.getDeclaredField("defaultCharset");
+	      charset.setAccessible(true);
+	      charset.set(null,null);
+	      if(hex.length()%2!=0){
+	         System.err.println("Invlid hex string.");
+	         return;
+	      }
+	      
+	      StringBuilder builder = new StringBuilder();
+
+	      for (int i = 0; i < hex.length(); i = i + 2) {
+	         // Step-1 Split the hex string into two character group
+	         String s = hex.substring(i, i + 2);
+	         // Step-2 Convert the each character group into integer using valueOf method
+	         int n = Integer.valueOf(s, 16);
+	         // Step-3 Cast the integer value to char
+	         builder.append((char)n);
+	      }
+
+	      System.out.println("Hex = " + hex);
+			String string = new String(builder.toString().getBytes());
+
+	      System.out.println("ASCII = " + string);
+	   }
+}

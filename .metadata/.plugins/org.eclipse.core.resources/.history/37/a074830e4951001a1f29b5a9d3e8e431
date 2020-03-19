@@ -1,0 +1,23 @@
+package com.nik.problems;
+
+import java.util.Scanner;
+
+public class SpiralMatrixDemo {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number");
+		int n = sc.nextInt();
+		int spiral[][] = getSpiralMatrix(n);
+		for (int i = 0; i < spiral.length; i++) {
+			for (int j = 0; j < spiral.length; j++) {
+				System.out.println(spiral[i][j] + "\t");
+			}
+			System.out.println();
+		}
+	}
+
+	private static int[][] getSpiralMatrix(int n) {
+		int spiralMatrix[][]= new int [n][n];
+		return spiralMatrix;
+	}
+}

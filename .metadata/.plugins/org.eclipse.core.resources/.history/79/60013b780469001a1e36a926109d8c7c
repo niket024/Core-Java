@@ -1,0 +1,11 @@
+    <?xml version="1.0" encoding="UTF-8"?>
+<taskdata:Task xmi:version="2.0"
+	xmlns:xmi="http://www.omg.org/XMI"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:taskdata="http://www.experian.com/atlas/taskdata">
+	<processes xsi:type="taskdata:TriggerProcess">
+		<commandParameters name="ENV_TYPE" description=""
+			value="Current" required="false" defaultValue="" switchName=""
+			dataType="CHARACTER" regExp="" />
+	</processes>
+</taskdata:Task>

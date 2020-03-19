@@ -1,0 +1,14 @@
+package com.nik.problems;
+
+import java.io.UnsupportedEncodingException;
+
+import org.apache.commons.codec.DecoderException;
+import org.apache.commons.codec.binary.Hex;
+
+public class HexToASCII {
+	public static void main(String[] args) throws DecoderException, UnsupportedEncodingException {
+		String hexString = "fd00000aa8660b5b010006acdc0100000101000100010000";    
+		byte[] bytes = Hex.decodeHex(hexString.toCharArray());
+		System.out.println(new String(bytes, "UTF-8"));
+	   }
+}

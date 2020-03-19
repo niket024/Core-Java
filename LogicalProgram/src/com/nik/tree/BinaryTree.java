@@ -1,6 +1,9 @@
 package com.nik.tree;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -211,6 +214,26 @@ public class BinaryTree {
 			printLeafNode(root.left);
 			printLeafNode(root.right);
 		}
+
+	}
+
+	public void verticleOrderTraverse(Node rootNode, int hd, Map<Integer, List<Integer>> map) {
+		if (rootNode == null) {
+			return;
+		} else {
+			if (map.containsKey(hd)) {
+				List<Integer> list = map.get(hd);
+				list.add(rootNode.data);
+				map.put(hd, list);
+
+			} else {
+				List<Integer> list = new ArrayList<Integer>();
+				list.add(rootNode.data);
+				map.put(hd, list);
+			}
+		}
+		verticleOrderTraverse(rootNode.left, hd - 1, map);
+		verticleOrderTraverse(rootNode.right, hd + 1, map);
 
 	}
 

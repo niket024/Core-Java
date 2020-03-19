@@ -1,0 +1,7 @@
+package com.nik.problems;
+
+public class LookAndSayDemo {
+	public static void main(String[] args) {
+
+	}
+}

@@ -1,0 +1,22 @@
+package com.nik.problems;
+
+public class ContAndSayProblem {
+	public static void main(String[] args) {
+		String s = "1";
+		int n = 5;
+		StringBuilder builder = new StringBuilder(s);
+		while (n >= 0) {
+			int i = 0;
+			while (i < s.length()) {
+				int count = 0;
+				while (i + 1 < s.length() && s.charAt(i) == s.charAt(i + 1)) {
+					count++;
+					i++;
+				}
+				builder.append(count).append(s.charAt(i));
+			}
+			n--;
+		}
+		System.out.println(builder);
+	}
+}

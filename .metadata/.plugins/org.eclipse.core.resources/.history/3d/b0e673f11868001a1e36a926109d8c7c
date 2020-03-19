@@ -1,0 +1,18 @@
+package com.nik.problems;
+
+import java.io.UnsupportedEncodingException;
+
+import org.apache.commons.codec.DecoderException;
+import org.apache.commons.codec.binary.Hex;
+
+public class HexToASCII {
+	public static void main(String[] args) throws DecoderException, UnsupportedEncodingException {
+		System.setProperty("file.encoding","UTF-8");
+		Field charset = Charset.class.getDeclaredField("defaultCharset");
+		charset.setAccessible(true);
+		charset.set(null,null);
+		String hexString = "C1C6F0F0F0F1";    
+		byte[] bytes = Hex.decodeHex(hexString.toCharArray());
+		System.out.println(new String(bytes, "UTF-8"));
+	   }
+}
