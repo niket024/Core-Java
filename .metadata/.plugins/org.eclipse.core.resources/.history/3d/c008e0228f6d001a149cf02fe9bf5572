@@ -1,0 +1,9 @@
+
+public class Test {
+public static void main(String[] args) {
+	String input = "EVERTT-WTÝ";
+	String s1 = input.replaceAll("[^\\p{ASCII}]", " ");
+	System.out.println(s1);
+
+}
+}

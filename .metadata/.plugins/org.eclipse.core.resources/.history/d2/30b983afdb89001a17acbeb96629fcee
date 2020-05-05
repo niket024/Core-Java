@@ -1,0 +1,46 @@
+class Thread1 implements Runnable {
+	int counter;
+
+	public Thread1(int counter) {
+		this.counter = counter;
+	}
+
+	@Override
+	public void run() {
+		if(counter%2!=0) {
+			try {
+				wait();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}else {
+			System.out.println(counter);
+			counter++;
+			notify();
+		}
+	}
+}
+
+class Thread2 implements Runnable {
+	@Override
+	public void run() {
+		for (int i = 1; i <= 10; i++) {
+			if (i % 2 != 0) {
+				System.out.println(i);
+			}
+		}
+
+	}
+}
+
+public class NumberPrintingDemo {
+	public static void main(String[] args) {
+		Thread1 t1 = new Thread1(0);
+		Thread2 t2 = new Thread2();
+		Thread thread1 = new Thread(t1);
+		thread1.start();
+		Thread thread2 = new Thread(t2);
+		thread2.start();
+	}
+}

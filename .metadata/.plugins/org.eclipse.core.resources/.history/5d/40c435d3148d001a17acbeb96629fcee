@@ -1,0 +1,13 @@
+package com.nik.array;
+
+public class FindingLessDifference {
+	public static void main(String[] args) {
+		int arr[] = { 3, 6, 36, 32, 32, 121, 66, 24, 22, 371, 661, 6, 4, 8, -1 };
+		System.out.println(processArray(arr));
+	}
+
+	private static int processArray(int[] arr) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

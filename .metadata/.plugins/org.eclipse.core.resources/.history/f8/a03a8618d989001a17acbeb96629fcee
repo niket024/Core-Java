@@ -1,0 +1,9 @@
+import java.util.Date;
+import java.util.List;
+
+class Employee {
+	int id;
+	String name;
+	List<String> projects;
+	Date doj;
+}

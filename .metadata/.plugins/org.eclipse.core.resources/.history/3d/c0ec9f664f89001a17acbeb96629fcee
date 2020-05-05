@@ -1,0 +1,14 @@
+package com.nik;
+
+public class SingeltonTest {
+	private SingeltonTest() {
+	}
+	private SingeltonTest singeltonTest;
+	
+	public SingeltonTest getSingletonTest() {
+		synchronized (this) {
+			
+		}
+	}
+
+}

@@ -1,0 +1,19 @@
+package com.nik;
+
+public class SingeltonTest {
+	private SingeltonTest() {
+	}
+	private SingeltonTest singeltonTest;
+	
+	public SingeltonTest getSingletonTest() {
+		synchronized (this) {
+			if(singeltonTest == null) {
+				singeltonTest = new SingeltonTest();
+				return singeltonTest;
+			}else {
+				return singeltonTest;
+			}
+		}
+	}
+
+}

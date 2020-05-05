@@ -12,10 +12,8 @@ public class ThreadPrintingNumberInSeq
 		ThreadPrintingNumberInSeq testClass = new ThreadPrintingNumberInSeq();
 		Thread t1 = new Thread(testClass.new Printer(1));
 		Thread t2 = new Thread(testClass.new Printer(2));
-		Thread t3 = new Thread(testClass.new Printer(3));
 		t1.start();
 		t2.start();
-		t3.start();
 	}
 
 	class Printer implements Runnable
@@ -48,9 +46,8 @@ public class ThreadPrintingNumberInSeq
 							if (threadId == 1)
 								threadIdToRun = 2;
 							else if (threadId == 2)
-								threadIdToRun = 3;
-							else if (threadId == 3)
 								threadIdToRun = 1;
+							
 							object.notifyAll();
 						}
 					}

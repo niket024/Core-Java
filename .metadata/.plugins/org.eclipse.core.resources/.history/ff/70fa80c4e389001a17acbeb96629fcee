@@ -1,0 +1,7 @@
+package interfce;
+
+public interface A {
+	default void test() {
+
+	}
+}

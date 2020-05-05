@@ -1,0 +1,10 @@
+package interfce;
+
+public class Test {
+	public static void main(String[] args) {
+		String name = "My name is Niket";
+		for (int i = name.length(); i > 0; i++) {
+
+		}
+	}
+}

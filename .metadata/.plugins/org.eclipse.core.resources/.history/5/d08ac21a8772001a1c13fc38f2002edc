@@ -1,0 +1,14 @@
+package comparable;
+
+public class MyArrayDemo {
+	public static void main(String[] args) {
+		int myArray [] = new int[5];
+		//0, 1,2,3,4
+		myArray[0] =10;
+		myArray[1] =10;
+		myArray[2] =10;
+		myArray[3] =10;
+		myArray[4] =10;
+		System.out.println(myArray[3]);
+	}
+}

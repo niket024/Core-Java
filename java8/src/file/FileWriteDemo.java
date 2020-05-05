@@ -18,6 +18,6 @@ public class FileWriteDemo {
 			e.printStackTrace();
 		}
 		System.out.println("done");
-System.out.println(Math.pow(2,1));
+		System.out.println(Math.pow(2, 1));
 	}
 }

@@ -1,0 +1,18 @@
+package interfce;
+
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class Test {
+	public static void main(String[] args) {
+		String name = "My name is Niket";
+		/*
+		 * for (int i = name.length()-1; i >= 0; i--) {
+		 * System.out.print(name.charAt(i)); }
+		 */
+		String s1 = name.chars().map(s -> new StringBuffer(s).reverse()).collect(Collectors.joining());
+		System.out.println(s1);
+		String s2 = Stream.of(name).map(word -> new StringBuilder(word).reverse()).collect(Collectors.joining(" "));
+		System.out.println(s2);
+	}
+}

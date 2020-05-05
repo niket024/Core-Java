@@ -1,0 +1,7 @@
+package com.nik;
+
+public class SingeltonTest {
+private(){
+	
+}
+}

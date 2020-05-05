@@ -1,0 +1,6 @@
+class Employee {
+	int id;
+	String name;
+	List<String> projects;
+	Date doj;
+}
