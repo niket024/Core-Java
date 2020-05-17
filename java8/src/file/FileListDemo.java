@@ -11,6 +11,7 @@ public class FileListDemo {
 	public static void main(String[] args) {
 		try {
 			Files.list(Paths.get(".")).forEach(System.out::println);
+			Files.list(Paths.get(".")).parallel().forEach(System.out::println);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
