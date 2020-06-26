@@ -96,4 +96,11 @@ public class LinkedListDemo {
 		}
 
 	}
+
+	public static Node deleteNodeWithoutRoot(Node node3) {
+		node3.data = node3.next.data;
+		node3.next = node3.next.next;
+		node3 = null;
+		return null;
+	}
 }

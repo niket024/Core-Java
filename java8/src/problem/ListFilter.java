@@ -16,7 +16,6 @@ public class ListFilter {
 		java8Way(list);
 		System.out.println("Java 8");
 		System.out.println(list);
-
 	}
 
 	private static void java8Way(List<String> list) {

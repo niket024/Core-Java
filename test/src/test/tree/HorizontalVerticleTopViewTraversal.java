@@ -6,6 +6,11 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class HorizontalVerticleTopViewTraversal {
+	private static final HorizontalVerticleTopViewTraversal obj;
+	static
+	{
+		obj = new HorizontalVerticleTopViewTraversal();
+	}
 	public static void main(String[] args) {
 		Node root = new Node(1);
 		Node two = new Node(2);

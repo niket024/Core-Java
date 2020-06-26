@@ -20,6 +20,19 @@ to customize the serialization process.
 which ever variable is having transient keyword that is not
 participating into serialization
 
+Uses of serialVersionUID:
+------------------------
+During serialization, java runtime associates a version number with each serializable class. 
+This number called serialVersionUID, 
+which is used during deserialization to verify that the sender and 
+receiver of a serialized object have loaded classes for that object that are compatible with respect to serialization.
+for eg. if you serialize the object and then you change the attribute of that class or object
+then deserialization will fail.
+to avoid this you need to add serialVersionUID
+
+If you not add serialVersionUID then JVM will add including all the attribute so if you change any attribute the it will
+be a mismatch hence desialization will be failed.
+
 Externalization
 ---------------------
 To customize the Serialization process

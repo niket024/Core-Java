@@ -9,19 +9,15 @@ import java.util.stream.IntStream;
 public class A {
 	public static void main(String[] args) {
 		// programming way
-		int x = 90;
-		String stmt = "";
-		if (x > 50) {
-			stmt = "heavy";
-		} else {
-			stmt = "Not heavy";
-		}
-		System.out.println(stmt);
-
-		// expressive way
-		System.out.println(x > 50 ? "heavy" : "not heavy");
-		List<Integer> list = IntStream.range(0, 500000).boxed().collect(Collectors.toList());
-		getEven(list);
+		/*
+		 * int x = 90; String stmt = ""; if (x > 50) { stmt = "heavy"; } else { stmt =
+		 * "Not heavy"; } System.out.println(stmt);
+		 * 
+		 * // expressive way System.out.println(x > 50 ? "heavy" : "not heavy");
+		 * List<Integer> list = IntStream.range(0,
+		 * 500000).boxed().collect(Collectors.toList()); getEven(list);
+		 */
+		getPermutation("", "abc");
 	}
 
 	private static void getEven(List<Integer> list) {
@@ -48,4 +44,15 @@ public class A {
 
 	}
 
+	public static void getPermutation(String prefix, String str) {
+		int len = str.length();
+		if (len == 0) {
+			System.out.println(prefix);
+		} else {
+			for (int i = 0; i < len; i++) {
+				getPermutation(prefix + str.charAt(i), str.substring(0, i) + str.substring(i + 1, str.length()));
+
+			}
+		}
+	}
 }

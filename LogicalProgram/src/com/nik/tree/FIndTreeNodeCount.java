@@ -17,5 +17,4 @@ public class FIndTreeNodeCount
 		System.out.println("Total node count = " + binaryTree.getTreeNodeCount(root));
 		
 	}
-
 }
