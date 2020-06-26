@@ -1,0 +1,25 @@
+Scala Note:
+------------------
+val - constatnt (cannot be changed) recommended
+eg. val nik: Int =90
+
+Var - variable (Can be changed) avoid using
+eg. var nik: Int =90
+Lazy initialization
+Sometimes you may wish to delay the initialization of some variable until at the point where it is consumed by your application
+eg.lazy val donutService = "initialize some donut service"
+
+Declare a variable with no initialization
+eg. var leastFavoriteDonut: String = _
+
+Strict Evaluation
+---------------------
+https://youtu.be/ejxNMXop9tU?list=PLkz1SCf5iB4dZ2RNKCu7W9o2OtZweGY6x&t=213
+
+Stream - It is a lazy evaluator. It applies all the filter on each element then calculate it.
+List - It is first fetch all elements then apply filter
+
+Touple vs List
+The main difference between lists and a tuples is the fact that lists are mutable whereas tuples are immutable.
+refer
+https://www.afternerd.com/blog/difference-between-list-tuple/

@@ -1,0 +1,6 @@
+Scala Note:
+val - constatnt
+Var - variable
+Lazy initialization
+Sometimes you may wish to delay the initialization of some variable until at the point where it is consumed by your application
+eg.lazy val donutService = "initialize some donut service"
