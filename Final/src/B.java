@@ -4,6 +4,6 @@ public class B
 
 	final void test()
 	{
-
+		 //important BL
 	}
 }

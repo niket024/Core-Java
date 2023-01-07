@@ -1,0 +1,37 @@
+public class Cal {
+
+	void welcome() {
+		System.out.println("Welcome to the calculator program");
+		System.out.println("Learning java is awesome");
+	}
+
+	void add() {
+		int n1 = 10;
+		int n2 = 20;
+		int sum = n1 + n2;
+		System.out.println("Sum = " + sum);
+	}
+
+	void sub(int n1, int n2) {
+		int diff = n1 - n2;
+		System.out.println("Diff = " + diff);
+	}
+
+	int mul() {
+
+		int n1 = 10;
+		int n2 = 34;
+		int mul = n1 * n2;
+
+	}
+
+	public static void main(String[] args) {
+		System.out.println("********Calculator*******");
+		Cal c1 = new Cal();
+		c1.welcome();
+		c1.add();
+		c1.add();
+		c1.sub(20, 10);
+		c1.sub(30, 25);
+	}
+}

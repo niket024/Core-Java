@@ -1,0 +1,13 @@
+
+public class Account {
+	String bankName;
+	int accNo;
+	String name;
+	double balance;
+	int branchCode;
+	
+	public static void main(String[] args) {
+		
+	}
+	
+}

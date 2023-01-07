@@ -1,0 +1,9 @@
+
+public class Account {
+	String bankName;
+	int accNo;
+	String name;
+	double balance;
+	int branchCode
+	
+}

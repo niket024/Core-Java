@@ -1,0 +1,11 @@
+package polyMorphism.realtime;
+
+public class Manager {
+
+	public static getVehicleDetails(Vehicle vehicle) {
+		
+	}
+	public static void main(String[] args) {
+		
+	}
+}

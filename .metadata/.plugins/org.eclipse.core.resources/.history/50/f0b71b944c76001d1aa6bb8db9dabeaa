@@ -1,0 +1,16 @@
+public class B extends A {
+
+	@Override
+	public void test(int i) {
+		System.out.println("test");
+		
+	}
+
+	@Override
+	public void test2(int i) {
+		System.out.println("test2");
+		
+	}
+	
+
+}

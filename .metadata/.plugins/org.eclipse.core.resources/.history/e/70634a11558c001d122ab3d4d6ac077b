@@ -1,0 +1,12 @@
+
+public class PrivateDemo {
+	private int i;
+
+	 PrivateDemo() {
+
+	}
+
+	private void test() {
+		System.out.println("test");
+	}
+}

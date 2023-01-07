@@ -5,14 +5,15 @@ public class F
 	public static void main(String[] args)
 	{
 
-		String s1 = "welcome";
+		String s1 = "    welcomem    ";
+	
 
-		// welcome
-		System.out.println(s1.charAt(3));
-		System.out.println(s1.indexOf('m'));
-		System.out.println(s1.lastIndexOf('m'));
+		// welcomem
+//		System.out.println(s1.charAt(3));
+//		System.out.println(s1.indexOf('m'));
+//		System.out.println(s1.lastIndexOf('m'));
 		System.out.println(s1.length());
-		String s2 = s1.trim();
+		String s2= s1.trim();
 		System.out.println(s2.length());
 		System.out.println(s1.length());
 		System.out.println(s1.contains("come"));
@@ -23,5 +24,5 @@ public class F
 	}
 }
 
-// 0 1 2 3 4 5 6
-// w e l c o m e
+// 0 1 2 3 4 5 6 7
+// w e l c o m e m

@@ -1,6 +1,6 @@
 public interface A
 {
-	public abstract void test();
-
-
+	
+	public abstract void test1();
+	
 }

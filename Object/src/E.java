@@ -7,7 +7,8 @@ public class E
 		E e1 = new E();
 		//System.out.println(Runtime.getRuntime().freeMemory());
 		e1 = null;
-		System.gc();
+		//System.gc();
+		Runtime.getRuntime().gc();
 		//System.out.println(Runtime.getRuntime().freeMemory());
 
 		//System.out.println(e1.i);

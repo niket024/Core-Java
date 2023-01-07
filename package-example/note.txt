@@ -1,0 +1,8 @@
+Package
+----------
+We can have same class name in same project with different package
+Our code is modulised, easy to fix the bug or issues
+
+Rule:
+1. Class of package should must be public if it is accessed outside the current package
+2. Method of package should must be public if it is accessed outside the current package

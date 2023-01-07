@@ -1,0 +1,49 @@
+
+public class Account {
+	static String bankName = "CITY";
+	int accNo;
+	String name;
+	double balance;
+	int branchCode;
+
+	
+
+
+	public Account(int accNo, String name, double balance, int branchCode) {
+		super();
+		this.accNo = accNo;
+		this.name = name;
+		this.balance = balance;
+		this.branchCode = branchCode;
+	}
+
+
+	public static void main(String[] args) {
+		Account cust1 = new Account(123, "Abc", 3000.0, 546);
+
+		System.out.println("########Customer 1 details######");
+		System.out.println("Bank name = " + Account.bankName);
+		System.out.println("Account No. = " + cust1.accNo);
+		System.out.println("Name = " + cust1.name);
+		System.out.println("Balance = " + cust1.balance);
+		System.out.println("Branch code = " + cust1.branchCode);
+
+		System.out.println("########Customer 2 details######");
+		Account cust2 = new Account(124, "Xyz", 2000.0, 546);
+
+		System.out.println("Bank name = " + Account.bankName);
+		System.out.println("Account No. = " + cust2.accNo);
+		System.out.println("Name = " + cust2.name);
+		System.out.println("Balance = " + cust2.balance);
+		System.out.println("Branch code = " + cust2.branchCode);
+		System.out.println("########Customer 3 details######");
+		Account cust3 = new Account(125, "XXX", 0.0, 546);
+
+		System.out.println("Bank name = " + Account.bankName);
+		System.out.println("Account No. = " + cust3.accNo);
+		System.out.println("Name = " + cust3.name);
+		System.out.println("Balance = " + cust3.balance);
+		System.out.println("Branch code = " + cust3.branchCode);
+	}
+
+}

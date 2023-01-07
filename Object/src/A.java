@@ -1,20 +1,20 @@
-public class A
-{
-	int i=10;
+public class A extends Object {
+	int i = 90;
+	int j = 80;
+	int k = 10;
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		A a1 = new A();
-		A a2 = new A();
-		A a3 = a2;
+
 		System.out.println(a1.toString());
-		System.out.println(a2);
-		System.out.println(a3);
+
 	}
+
 	@Override
-	public String toString()
-	{
-		return ""+i;
+	public String toString() {
+		return "A [i=" + i + ", j=" + j + ", k=" + k + "]";
 	}
+
+	
 
 }

@@ -10,14 +10,13 @@ public class F
 	public static void main(String[] args)
 	{
 		File f1 = new File(
-				"C:\\Users\\niketk\\Desktop\\Capture.JPG");
+				"C:\\Users\\niket.kumar\\Pictures\\Screenshots\\test.png");
 		
-		File f2 = new File("test1.jpg");
+		File f2 = new File("test1.png");
 		FileInputStream fin = null;
 		BufferedInputStream bin = null;
 		FileOutputStream fout = null;
 		BufferedOutputStream bout = null;
-		int i=90/0;
 		try
 		{
 			fin = new FileInputStream(f1);

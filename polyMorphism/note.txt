@@ -15,3 +15,14 @@ double d;
 d= i;
 
 i = d;
+
+
+Information
+	getDetails();
+	getAddress();
+	
+Student
+
+Teacher
+
+School

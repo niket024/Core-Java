@@ -14,16 +14,9 @@ public class DownCasting
 		 D d4 = (D) new C();
 		 D d5 = (D) new Object();
 
-		Object obj = new D();
-		test(obj);
+		
 
 		System.out.println("done");
 	}
 
-	static void test(Object obj1)
-	{
-		D d = (D) obj1;
-		d.test();
-		System.out.println("done");
-	}
 }

@@ -13,6 +13,7 @@ public class Copy
 		c1.i = 89;
 		Copy c2 = new Copy();
 		Copy c3 = c2;
+		
 		System.out.println(c2.i);
 		System.out.println(c3.i);
 		c3.i = 20;
@@ -20,5 +21,12 @@ public class Copy
 		System.out.println(c2.i);
 		System.out.println(c3.i);
 	}
+	//cons1
+	//cons1
+	//10
+	//10
+	//89
+	//20
+	//20
 
 }

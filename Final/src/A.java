@@ -1,23 +1,13 @@
-import java.util.Scanner;
-
 public class A
 {
-	final int i;
+	final int i=90;
 
-	A()
-	{
-		this.i =20;
-	}
-	A(int i)
-	{
-		this.i =i;
-	}
+	
 	public static void main(String[] args)
 	{
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter the i value");
-		int i = sc.nextInt();
-		A a1 = new A(i);
+		A a1 = new A();
+		//a1.i =80;
 		System.out.println(a1.i);
+		
 	}
 }

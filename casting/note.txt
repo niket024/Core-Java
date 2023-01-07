@@ -37,11 +37,19 @@ a1=new A();----object
 
 A a1=new A();----instance
 
-D-->C-->B-->A
-
-	
+A
+^
+|
+B
+^
+|
+C
+^
+|
+D	
 	
 A a1=new A();
+
 A a2=new B();
 A a3=new C();
 A a4=new D();

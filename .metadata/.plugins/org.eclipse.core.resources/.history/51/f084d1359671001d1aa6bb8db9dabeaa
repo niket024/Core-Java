@@ -1,0 +1,16 @@
+public class A {
+
+	A() {
+		System.out.println("cons1");
+	}
+	
+	A(int i) {
+		System.out.println(i);
+		System.out.println("cons2");
+	}
+
+	public static void main(String[] args) {
+		
+		System.out.println("main");
+	}
+}

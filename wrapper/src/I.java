@@ -10,6 +10,7 @@ public class I
 
 	static void test(int i)
 	{
+		System.out.println(i);
 		System.out.println("done");
 	}
 }

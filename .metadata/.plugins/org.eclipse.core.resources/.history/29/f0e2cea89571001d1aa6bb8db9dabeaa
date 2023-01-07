@@ -1,0 +1,11 @@
+public class A {
+
+	A() {
+		System.out.println("cons1");
+	}
+
+	public static void main(String[] args) {
+		A a1 = new A();
+		System.out.println("main");
+	}
+}

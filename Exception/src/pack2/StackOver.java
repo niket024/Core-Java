@@ -6,5 +6,6 @@ public class StackOver
 	{
 		System.out.println("main");
 		main(args);
+		
 	}
 }

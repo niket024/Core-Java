@@ -1,32 +1,34 @@
-public class A
-{
-	void test()
-	{
-		System.out.println("test");
-	}
-	
-	void test(int i)
-	{
-		System.out.println("test with parameter integer");
+public class A {
+
+	void test() {
+		System.out.println("test without args");
 	}
 
-	void test(int i, int j)
-	{
-		System.out.println("test with parameter 2 integer ");
+	void test(int i) {
+		System.out.println(i);
+		System.out.println("test with one args");
 	}
 
-	void test(double i)
-	{
-		System.out.println("test with parameter double");
+	void test(double i) {
+		System.out.println(i);
+		System.out.println("test with one double args");
 	}
 
-	public static void main(String[] args)
-	{
-		Account customer = new Account();
+	void test(int i, int j) {
+		System.out.println("test with two args");
+	}
+
+	public static void main() {
+		System.out.println("Main");
+	}
+
+	public static void main(String[] args) {
 		A a1 = new A();
 		a1.test();
 		a1.test(12);
-		a1.test(78.78);
-		a1.test(12, 34);
+		a1.test(12.4);
+		a1.test(12, 4);
+		main();
+
 	}
 }

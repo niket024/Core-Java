@@ -1,6 +1,7 @@
 
 public class Manager
 {
+	public static final String STATUS="Success";
 	public static void main(String[] args)
 	{
 

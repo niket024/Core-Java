@@ -27,3 +27,5 @@ Error
 	2.Assertion
 	3.Nosuchmethod
 	etc
+	
+finally - It will always execute if try block is executed

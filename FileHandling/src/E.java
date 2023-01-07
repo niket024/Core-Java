@@ -9,12 +9,12 @@ public class E
 	{
 		
 		FileReader in = new FileReader("test1.txt");
-		System.out.println(in);
 		BufferedReader bin = new BufferedReader(in);
 		String s1 = bin.readLine();
 		if (s1 == null)
 		{
 			System.out.println("empty file");
+			return;
 
 		}
 		while (s1 != null)

@@ -1,29 +1,30 @@
-public class C
-{
+public class C {
 
+	static int i = 10;
+	int j = 20;
 	
-	public static void main(String[] args)
+	static void printSum()
 	{
-		C.test();
-		System.out.println("main");
-		C.test();
+		int num1 = 10;
+		int num2 = 20;
+		int sum = num1 + num2;
+		System.out.println("Sum=" + sum);
+	}
+
+	void printSub()
+	{
+		int num1 = 30;
+		int num2 = 20;
+		int diff = num1 - num2;
+		System.out.println("Diff=" + diff);
+	}
+	public static void main(String[] args) {
+		System.out.println(C.i);
 		C c1 = new C();
-		c1.test1();
+		System.out.println(c1.j);
+		C.printSum();
+		c1.printSub();
+
 	}
-	
-	static void test()
-	{
-		System.out.println("Test");
-		System.out.println("Test");
-		System.out.println("Test");
-		System.out.println("Test");
-		System.out.println("Test");
-		System.out.println("Test");
-		System.out.println("Test");
-	}
-	
-	void test1()
-	{
-		System.out.println("test1");
-	}
+
 }

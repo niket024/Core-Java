@@ -1,0 +1,8 @@
+package pack1;
+
+public class A {
+	void test()
+	{
+		System.out.println("pack1.A");
+	}
+}

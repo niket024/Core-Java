@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class B extends Object
 {
 
@@ -15,11 +17,19 @@ public class B extends Object
 
 	}
 
+
+
 	@Override
-	public boolean equals(Object obj)
-	{
-		B b = (B) obj;
-		boolean status = this.i == b.i;
-		return status;
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		B other = (B) obj;
+		return i == other.i;
 	}
+
+	
 }

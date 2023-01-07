@@ -11,12 +11,12 @@ public class D extends Thread
 
 	public static void main(String[] args)
 	{
-		C c1 = new C();
-		c1.setDaemon(true);
-		c1.start();
+		D d1 = new D();
+		d1.setDaemon(true);
+		d1.start();
 		try
 		{
-			c1.join();
+			d1.join();
 		} catch (InterruptedException e)
 		{
 			e.printStackTrace();

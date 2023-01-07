@@ -1,7 +1,0 @@
-package com.nik.factory;
-
-import java.awt.geom.Area;
-
-public class Triangle implements Area{
-get
-}

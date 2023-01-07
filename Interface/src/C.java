@@ -1,5 +1,5 @@
 public interface C extends A
 {
-	void test3();
+	void test2();
 
 }

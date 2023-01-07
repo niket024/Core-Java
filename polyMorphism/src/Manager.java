@@ -15,6 +15,10 @@ public class Manager
 		B b1 = new B();
 		method(b1);
 		
+		C c1 = new C();
+		method(c1);
+
+		
 
 	}
 }

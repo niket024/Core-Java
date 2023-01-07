@@ -1,15 +1,22 @@
-public class B implements C
-{
+public class B implements C {
 
 	@Override
-	public void test()
-	{
-		// TODO Auto-generated method stub
+	public void test1() {
+		System.out.println("Test1");
 		
 	}
-	public void test3()
-	{
+	@Override
+	public void test2() {
+		System.out.println("Test2");
 		
+	}
+
+	
+	public static void main(String[] args) {
+		B b1 = new B();
+		b1.test1();
+		b1.test2();
 	}
 	
+
 }

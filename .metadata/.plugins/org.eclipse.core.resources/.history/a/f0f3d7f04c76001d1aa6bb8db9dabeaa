@@ -1,0 +1,12 @@
+public class B extends A {
+
+	
+	
+	public static void main(String[] args) {
+		B b1 = new B();
+		b1.test(0);
+		b1.test2(0);
+		b1.test1();
+	}
+
+}

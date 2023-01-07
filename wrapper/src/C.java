@@ -7,6 +7,7 @@ public class C
 		Integer obj = new Integer(s1);
 		int i = obj.intValue();
 		System.out.println(i);
+		
 		Double obj2 = new Double(s1);
 		double d1 = obj2.doubleValue();
 		System.out.println(d1);

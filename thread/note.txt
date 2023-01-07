@@ -86,6 +86,10 @@ thread type
  t2--a1.test()
  
  
+ Homework:
+ Write a program for two thread where one thread should print 
+ even number and other thread should print odd number
+ 
  
  
  

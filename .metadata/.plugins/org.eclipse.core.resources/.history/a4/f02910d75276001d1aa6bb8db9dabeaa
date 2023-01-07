@@ -1,0 +1,16 @@
+package example;
+
+public class SBI implements RBI {
+
+	@Override
+	public int getROI() {
+		System.out.println("I m from SBi");
+		return 7 ;
+	}
+
+	@Override
+	void getBankDetails() {
+		System.out.println("I am SBI bank");
+
+	}
+}
