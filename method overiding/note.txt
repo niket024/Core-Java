@@ -1,3 +1,5 @@
 Method overloading
 ---------------------
-When ever we have same method name with same  no of arguments in super class and child class is know as
+When ever we have same method name 
+with different number of arguments or different type of arguments
+is known as method overloading

@@ -24,7 +24,7 @@ thread type
  3 thread are by default
  ----------------
  1.main-user
- 2.Thread schedular---daemons
+ 2.Thread scheduler---daemons
  3.Garbage collector--daemons
  
  we can create tread in java by two way

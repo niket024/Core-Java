@@ -2,7 +2,7 @@ public class C extends B
 {
 
 	@Override
-	void test()
+	public void test(int p)
 	{
 		
 	}

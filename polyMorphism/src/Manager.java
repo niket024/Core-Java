@@ -1,22 +1,24 @@
 public class Manager
 {
-	static void method(A a2)
+	static void method(A a) //a=b1
 	{
-		System.out.println(a2.i);
-		a2.test();
+		System.out.println(a.i);
+		a.test();
 	}
 	
 
 	public static void main(String[] args)
 	{
 		A a1 = new A();
-		method(a1);
+		//method(a1);
 		
 		B b1 = new B();
-		method(b1);
-		
+		//method(b1);
+		System.out.println(b1.i);
+//		
 		C c1 = new C();
 		method(c1);
+		System.out.println(c1.i);
 
 		
 

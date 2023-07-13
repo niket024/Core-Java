@@ -1,8 +1,8 @@
-public class B 
+public class B
 {
 	int i;
 
-	final void test()
+	final public void test(int i)
 	{
 		 //important BL
 	}

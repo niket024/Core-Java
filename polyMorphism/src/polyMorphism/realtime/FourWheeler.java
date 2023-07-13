@@ -13,4 +13,5 @@ public class FourWheeler implements Vehicle{
 		System.out.println("I am four wheeler speed method");
 		return 300;
 	}
+	
 }

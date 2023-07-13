@@ -14,7 +14,7 @@ public class H
 		x[2][1] = 88;
 		x[2][2] = 88;
 		int sum = 0;
-		/*for (int i = 0; i < x.length; i++)
+		for (int i = 0; i < x.length; i++)
 		{
 			for (int j = 0; j < x[i].length; j++)
 			{
@@ -26,10 +26,8 @@ public class H
 
 			}
 			System.out.println();
-		}*/
-		for (int i = 0,j=2; i < x.length; i++,j--){
-			System.out.println(x[i][j]);
 		}
+		
 		System.out.println("sum=" + sum);
 	}
 }

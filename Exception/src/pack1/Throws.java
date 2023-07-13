@@ -1,24 +1,14 @@
 package pack1;
 
-public class Throws
-{
-	static void test() throws InterruptedException 
+public class Throws {
+	static void test() throws ArithmeticException
 	{
-		Thread.sleep(1000);
+		System.out.println("test");
+		int i = 10/0;
 	}
-
-	static void test1() throws InterruptedException 
-	{
+	
+	public static void main(String[] args) {
 		test();
-		
-	}
-
-	public static void main(String[] args) throws InterruptedException
-	{
-		
-		test1();
-
 		System.out.println("main");
-
 	}
 }

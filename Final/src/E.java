@@ -1,5 +1,5 @@
 
-public class E extends D
+public class E extends String
 {
 
 }

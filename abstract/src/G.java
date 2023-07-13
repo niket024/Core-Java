@@ -2,6 +2,7 @@ public class G extends F
 {
 	G()
 	{
+		super();
 		System.out.println("g-cons");
 	}
 

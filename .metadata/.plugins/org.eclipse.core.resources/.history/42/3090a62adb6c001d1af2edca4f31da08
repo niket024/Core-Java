@@ -1,7 +1,0 @@
-public class A {
-	
-	public static void main(String[] args) {
-		float distance=12666666699999999999999999999999999999.6f;
-		System.out.println(distance);
-	}
-}

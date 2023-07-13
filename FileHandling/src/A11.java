@@ -5,8 +5,9 @@ public class A11
 {
 	public static void main(String[] args) throws IOException
 	{
-		File f1 = new File("test1.txt");
-		if (!f1.exists())
+		File f1 = new File("test.txt");
+		boolean isFileExist = f1.exists();
+		if (!isFileExist)
 		{
 			System.out.println(f1.createNewFile());
 		} 

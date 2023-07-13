@@ -3,7 +3,7 @@ final
 3 scope
 -------
 1.variable
-	a.we must have to initialize the final var at the time declararion
+	a.we must have to initialize the final var at the time declaration
 	b.we can't change the value of final var
 2.method
 	a.we can't override the final method

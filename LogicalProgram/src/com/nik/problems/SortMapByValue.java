@@ -20,7 +20,7 @@ public class SortMapByValue {
 		map.put(5, "daisy");
 		map.put(55, "daisy");
 		map.put(6, "mmm");
-		System.out.println(sortHashMapByValues(map));
+		System.out.println(sortHashMapByValues((HashMap<Integer, String>)map.clone()));
 		sortByValueJava8(map);
 
 	}
@@ -41,23 +41,34 @@ public class SortMapByValue {
 
 		LinkedHashMap<Integer, String> sortedMap = new LinkedHashMap<>();
 
-		Iterator<String> valueIt = mapValues.iterator();
-		while (valueIt.hasNext()) {
-			String val = valueIt.next();
-			Iterator<Integer> keyIt = mapKeys.iterator();
-
-			while (keyIt.hasNext()) {
-				Integer key = keyIt.next();
-				String comp1 = passedMap.get(key);
-				String comp2 = val;
-
-				if (comp1.equals(comp2)) {
-					keyIt.remove();
-					sortedMap.put(key, val);
+		for(String s: mapValues) {
+			for(Integer i: mapKeys) {
+				String s1 = passedMap.get(i);
+				if(s.equals(s1)) {
+					passedMap.remove(i);
+					sortedMap.put(i, s);
 					break;
 				}
 			}
 		}
+		//other way
+//		Iterator<String> valueIt = mapValues.iterator();
+//		while (valueIt.hasNext()) {
+//			String val = valueIt.next();
+//			Iterator<Integer> keyIt = mapKeys.iterator();
+//
+//			while (keyIt.hasNext()) {
+//				Integer key = keyIt.next();
+//				String comp1 = passedMap.get(key);
+//				String comp2 = val;
+//
+//				if (comp1.equals(comp2)) {
+//					keyIt.remove();
+//					sortedMap.put(key, val);
+//					break;
+//				}
+//			}
+//		}
 		return sortedMap;
 	}
 }

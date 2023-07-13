@@ -17,9 +17,13 @@ School---
 
 Difference between Abstract class and Interface
 -----------------------------------
-1.we cant extends more than one class in abstract class but in interface we can
-2.we can keep constructor in abstract class but cant in interface
-3.In abstract class both implemented and unimplemented but in interface only unimplemented
+1.we can't extends more than one class in abstract 
+  class but in interface we can
+2.we can keep constructor in abstract class but can't in interface
+3.In abstract class both implemented and unimplemented but in 
+  interface only unimplemented
 4.In abstract class methods are not by default public and abstract
 but in interface
 5.In abstract class we are using extends but in interface implements
+6. In interface by default variables are public static and final 
+but same is not in abstract class

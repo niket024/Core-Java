@@ -7,6 +7,7 @@ public class Account
 
 	public Account(int accNo, int balance, String name, int age)
 	{
+		System.out.println("Initializing value");
 		this.accNo = accNo;
 		this.balance = balance;
 		this.name = name;
@@ -29,4 +30,6 @@ public class Account
 		System.out.println(customer2.name);
 		System.out.println(customer2.age);
 	}
+	
+	
 }

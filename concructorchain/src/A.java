@@ -10,7 +10,6 @@ public class A extends Object
 	{
 		A a = new A();
 		
-
 		
 	}
 

@@ -1,28 +1,29 @@
-public class B extends C {
+public class B extends C{
 
+	B()
+	{
+		super();
+		System.out.println("Cons-B");
+	}
 	@Override
-	public void test(int i) {
-		System.out.println("test");
+	void test4() {
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void test2(int i) {
-		System.out.println("test2");
+	void test2() {
+		// TODO Auto-generated method stub
 		
 	}
 	
-	@Override
-	void test4() {
-		System.out.println("Test4");
-	}
 	
 	public static void main(String[] args) {
 		B b1 = new B();
-		b1.test(0);
-		b1.test2(0);
-		b1.test1();
-		b1.test4();
+		b1.test();
 	}
 
+	
+
+	
 }

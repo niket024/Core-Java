@@ -1,5 +1,0 @@
-package polyMorphism.realtime;
-
-public interface Vehicle {
-
-}

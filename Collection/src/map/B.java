@@ -19,5 +19,6 @@ public class B
 		map.put("null", 12);
 		map.put("k1", 999999);
 		System.out.println(map);
+		
 	}
 }

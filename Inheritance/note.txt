@@ -27,3 +27,38 @@ types
 in c++
 4.multiple
 5.Hybrid
+
+why multiple inheritance is not supported in java?
+Diamond problem
+class A
+{
+	void test()
+	{
+		//
+	}
+
+}
+
+
+class B
+{
+	void test()
+	{
+		//
+	}
+
+}
+
+
+class C extend A, B
+{
+
+	public static void main(String args[])
+	{
+		C c1 = new C();
+		c1.test(); ? confusion 
+	
+	}
+}
+
+

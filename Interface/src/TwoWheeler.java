@@ -1,19 +1,18 @@
 
-public class TwoWheeler implements Vehicle
+public class TwoWheeler extends Vehicle
 {
 
 	@Override
-	public void cost()
-	{
-		System.out.println("two wheeler cost:"+10000);
+	public void cost() {
+		System.out.println("Cost = 5 lakh");
 		
 	}
 
 	@Override
-	public void speed()
-	{
-		System.out.println("two wheeler spped:"+100 +" kmph");
+	public void speed() {
+		System.out.println("Speed = 100kph");
 		
 	}
+	
 	
 }

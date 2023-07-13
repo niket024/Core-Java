@@ -1,5 +1,5 @@
 
-public class G implements Runnable
+public class G implements Runnable 
 {
 	@Override
 	public void run()

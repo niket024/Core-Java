@@ -4,6 +4,6 @@ public class A
 
 	void test()
 	{
-		System.out.println("test");
+		System.out.println("test-A");
 	}
 }

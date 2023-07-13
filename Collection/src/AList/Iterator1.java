@@ -3,10 +3,8 @@ package AList;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Iterator1
-{
-	public static void main(String[] args)
-	{
+public class Iterator1 {
+	public static void main(String[] args) {
 		ArrayList<Integer> list = new ArrayList<Integer>();
 		list.add(123);
 		list.add(34);
@@ -20,10 +18,10 @@ public class Iterator1
 
 		Iterator<Integer> it = list.iterator();
 
-		while (it.hasNext())
-		{
-			System.out.println(it.next());
+		int bonus = 5;
+		while (it.hasNext()) {
+			System.out.println(it.next() + bonus);
 		}
-		
+
 	}
 }

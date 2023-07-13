@@ -7,7 +7,12 @@ public class C
 	{
 		try
 		{
-			int j = 10 / 2;
+			int j = 10 / 0;
+			System.out.println("try");
+			System.out.println("try");
+			System.out.println("try");
+			System.out.println("try");
+			System.out.println("try");
 			System.out.println("try");
 		} catch (ArithmeticException ex)
 		{

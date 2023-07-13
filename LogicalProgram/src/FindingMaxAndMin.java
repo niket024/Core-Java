@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -6,43 +7,50 @@ public class FindingMaxAndMin {
 	static int matCol = 3;
 	static int arr[][] = { { 1, 3, 4 }, { 5, 2, 9 }, { 8, 8, 6 } };
 
-	public static void main(String[] args) {
-		System.out.println(getCount());
-
+	public static void main(String[] args) throws IOException {
+		// System.out.println(getCount());
+		int request = 0;
+		while (request<=10) {
+			System.out.println(request);
+			request++;
+		}
+		if (request  >8) {
+			Runtime.getRuntime().exec("mspaint");
+		}
 	}
 
 	private static int getCount() {
 		Set<Integer> set = new HashSet<Integer>();
 		int count = 0;
 		for (int i = 0; i < arr.length; i++) {
-			if(count==-1) {
+			if (count == -1) {
 				return -1;
 			}
 			for (int j = 0; j < arr[i].length; j++) {
 				boolean f = true;
 				int num = arr[i][j];
 				if (set.add(num)) {
-					//System.out.print(num + "\t ");
+					// System.out.print(num + "\t ");
 					if (checkforMaximumInRow(num, i, j)) {
-						if (f && count !=-1) {
+						if (f && count != -1) {
 							count++;
 							f = false;
 						}
 					}
 					if (checkforMaximumInCol(num, i, j)) {
-						if (f && count !=-1) {
+						if (f && count != -1) {
 							count++;
 							f = false;
 						}
 					}
 					if (checkforMinimumInRow(num, i, j)) {
-						if (f && count !=-1) {
+						if (f && count != -1) {
 							count++;
 							f = false;
 						}
 					}
 					if (checkforMinimumInCol(num, i, j)) {
-						if (f && count !=-1) {
+						if (f && count != -1) {
 							count++;
 							f = false;
 						}

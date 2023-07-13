@@ -23,7 +23,7 @@ List
 	3.LinkedList
 	
 Queue=FIFO or LILO
-	1.PriorityQueue
+	1.PriorityQueue - used for sorting
 	2.LinkedList
 	
 Set
@@ -46,6 +46,10 @@ Additionally, ConcurrentHashMap does not lock the entire Map when writing to it.
 It only locks the part of the Map that is being written to, internally.
 ConcurrentHashMap does not throw ConcurrentModificationException	
 
+Difference between ArrayList and Vector
+1. Vector syncronized but arraylist is not syncronized
+2. Capacityof vector increase by 100% but arraylist by 50 %
+3. Vector uses enumeration but arraylist uses Iterator
 
 Note:
 All classes of collection framework is overriding the
@@ -133,3 +137,5 @@ vector ------10
 	3=2
 	4=3
 	5=3
+	
+	CRUD

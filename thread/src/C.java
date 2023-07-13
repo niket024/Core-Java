@@ -10,7 +10,7 @@ public class C extends Thread {
 		C c1 = new C();
 		c1.setDaemon(true);
 		c1.start();
-		for (int i = 10; i < 2000; i++) {
+		for (int i = 10; i < 20; i++) {
 			System.out.println(i + "-" + Thread.currentThread().getName());
 		}
 	}

@@ -11,7 +11,21 @@ in java totally 8 data type
 7.char-[]
 8.boolean-false
 
+Note: - Default value is only applicable on class variable, 
+not on local variable
 
 int i;
 
 pf(i)
+
+
+Loop
+--------
+1. Initialization
+2. Condition
+3. Increment/decrement (Jump)
+
+3 types
+1. for
+2.while
+3. do while

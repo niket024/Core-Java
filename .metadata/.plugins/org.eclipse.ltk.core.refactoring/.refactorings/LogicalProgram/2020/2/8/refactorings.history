@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename local variable &apos;l&apos; in &apos;com.nik.problems.SpiralMatrixDemo.getSpiralMatrix(...)&apos; to &apos;c&apos;&#x0D;&#x0A;- Original project: &apos;LogicalProgram&apos;&#x0D;&#x0A;- Original element: &apos;com.nik.problems.SpiralMatrixDemo.getSpiralMatrix(int).l&apos;&#x0D;&#x0A;- Renamed element: &apos;l&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;l&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;com.nik.problems{SpiralMatrixDemo.java[SpiralMatrixDemo~getSpiralMatrix~I@l!570!586!581!581!I!0!false" name="c" references="true" stamp="1581920482851" version="1.0"/>
-</session>

@@ -13,8 +13,8 @@ public class B
 		pq.add(45);
 		pq.add(6);
 		pq.add(3);
-		pq.add(3);
-		pq.add(3);
+		pq.add(73);
+		pq.add(11);
 		pq.add(0);
 		pq.add(5);
 		pq.add(90);
@@ -34,6 +34,6 @@ public class B
 		//pq.add(145);
 		System.out.println(pq.poll());
 		System.out.println(pq);
-		
+//		
 }
 }

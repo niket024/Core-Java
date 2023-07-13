@@ -4,14 +4,14 @@ Object----java.lang package
 there are totally 11 methods inside this
 -----------------
 1.toString()--it prints the memory address
-2.equals()--It is checking the memory location,if it is same then true otherwidse false
+2.equals()--It is checking the memory location,if it is same then true otherwise false
 3.hasCode()---memory address in the form of integer
 4.wait()---overloaded 3 times
 5.notify()
 6.notifyAll()
-7.getClass()
-8.clone()
-9.finalize()
+7.getClass() - in reflection
+8.clone() - duplicate object
+9.finalize() - garbage collector
 
 
 How Garbage collector is working in Java?

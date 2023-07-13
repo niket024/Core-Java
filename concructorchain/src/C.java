@@ -1,5 +1,6 @@
 public class C extends B {
-	C() {
+	C() 
+	{
 		this(12);
 		System.out.println("c-cons1");
 	}

@@ -7,7 +7,7 @@ public class A
 	public static void main(String[] args)
 	{
 
-		PriorityQueue pq = new PriorityQueue();
+		PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
 		pq.add(12);
 		pq.add(23);
 		pq.add(45);

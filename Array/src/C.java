@@ -7,6 +7,8 @@ public class C
 		y[0]=89;
 		System.out.println(x[0]);
 		System.out.println(y[0]);
+		
+
 
 	}
 }

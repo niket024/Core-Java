@@ -1,14 +1,14 @@
-public class Mix
-{
-	static
+public class Mix {
+	static 
 	{
 		System.out.println("sib");
 	}
+
 	{
 		System.out.println("iib");
 	}
 
-	Mix()
+	Mix() 
 	{
 		System.out.println("cons");
 	}

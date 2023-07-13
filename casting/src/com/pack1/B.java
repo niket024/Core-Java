@@ -5,13 +5,10 @@ public class B
 
 	public static void main(String[] args)
 	{
-		short s = 10;
-		int i = 89;
-		i = s;
-		s = (short) i;
+		double d = 67.90;
+		int i =10;
+		i =  (int) d; //explicit narrowing
 		System.out.println(i);
-		System.out.println(s);
-		System.out.println("done");
 	}
 	
 }

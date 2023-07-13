@@ -1,4 +1,4 @@
-opps Features
+oops Features
 --------------
 1.Encapsulation
 2.Inheritance

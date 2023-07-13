@@ -1,22 +1,20 @@
 public class Manager1
 {
 	
-	static void callMethod(Vehicle v1)
-	{
-		v1.cost();
-		v1.speed();
-	}
+	
 
 	public static void main(String[] args)
 	{
 		
-		System.out.println("two wheeler");
+		TwoWheeler tw = new TwoWheeler();
+		tw.cost();
+		tw.speed();
+		tw.showroomDetails();
 		
-		callMethod(new TwoWheeler());
-		System.out.println("--------------");
-		System.out.println("four wheeler");
-		
-		callMethod(new FourWheeler());
+		FourWheeler fw = new FourWheeler();
+		fw.cost();
+		fw.speed();
+		fw.showroomDetails();
 
 	}
 }

@@ -1,12 +1,10 @@
-public class A {
+class A {
 
-	static int i;
-	int j;
-
+	static String bankName = "SBI";
 	public static void main(String[] args) {
-		A abc = new A();
-		System.out.println(A.i);
-	
-		System.out.println(abc.j);
+		
+		System.out.println("Welcome to " + bankName);
+		
 	}
+
 }

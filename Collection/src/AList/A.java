@@ -1,6 +1,7 @@
 package AList;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class A
 {
@@ -17,6 +18,7 @@ public class A
 		list.add(23);
 		list.add(88888888l);
 		list.add(3333);
+		//Collections.sort(list);
 		System.out.println(list);
 
 	}

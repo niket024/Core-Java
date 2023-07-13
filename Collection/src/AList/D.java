@@ -15,12 +15,13 @@ public class D
 		list.add(54);
 		list.add(54);
 		list.add(789);
+		
 		System.out.println(list);
 		Integer i1 = null;
 		for (int i = 0; i < list.size(); i++)
 		{
-			i1 = (Integer) list.get(i);
-			if (i1 == 1213)
+			i1 =  (Integer) list.get(i);
+			if (i1 == 67)
 			{
 				status = true;
 				break;

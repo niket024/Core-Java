@@ -18,6 +18,10 @@ public static void main(String[] args)
 	v1.add(150.0);
 	v1.add(150.0);
 	v1.add(150.0);
+	
+	
+
+
 	System.out.println(v1);
 	System.out.println(v1.capacity());
 	System.out.println(v1.size());

@@ -4,10 +4,10 @@ public class B {
 	public static void main(String[] args) {
 		System.out.println("main1");
 		try {
+			System.out.println("try");
 			int i = 10 / 0;
-		} catch (ArithmeticException ex) {
-			System.out.println("Handled :"+ ex);
-			//ex.printStackTrace();
+		} catch (Exception ex) {
+			System.out.println("catch");
 		}
 
 		System.out.println("main2");

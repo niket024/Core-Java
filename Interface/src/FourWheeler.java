@@ -1,5 +1,5 @@
 
-public class FourWheeler implements Vehicle
+public class FourWheeler extends Vehicle
 {
 	@Override
 	public void cost()

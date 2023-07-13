@@ -29,7 +29,6 @@ public class C
 		Set<Integer> keys = map.keySet();
 
 		Iterator<Integer> it = keys.iterator();
-		LinkedHashMap<Integer, Integer> map1 = new  LinkedHashMap<Integer, Integer>();
 		ArrayList<Integer> list = new ArrayList<Integer>();
 		
 		while (it.hasNext())

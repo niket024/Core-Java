@@ -1,7 +1,0 @@
-package comparable;
-
-public class MyArrayDemo {
-	public static void main(String[] args) {
-		int myArray [] = new int[5];
-	}
-}

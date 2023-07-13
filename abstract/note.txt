@@ -14,3 +14,4 @@ Rule:
 1.We can't create an object of abstract class
 2.When any concrete class inherit abstract class then we must have to override the
 unimplemented method
+3. We can keep constructor in abstract class

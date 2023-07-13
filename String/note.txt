@@ -21,7 +21,10 @@ string operation
 mutable---once it is created it can change
 immutable---once it is created we can't change
 
-
+How can you make your class immutable?
+1. Make the class as final
+2. No setters method
+3. All variable should be private and final
 
 Reg
 -----

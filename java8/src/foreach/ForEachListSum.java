@@ -5,8 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ForEachListSum
-{
+public class ForEachListSum {
 	public static void main(String[] args)
 	{
 		List<Integer> list = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4,
@@ -19,17 +18,22 @@ public class ForEachListSum
 		}
 		System.out.println("Sum = " + sum);
 
+		
+		System.out.println("sum1="+ list.stream().collect(Collectors.summingInt(n->n)));
+		
 		// After Java8
 		// summing list elements
-		System.out
-				.println("------------Summing each element of list---------------");
-		int sum1 = list.stream().collect(Collectors.summingInt(n -> n));																		
-																		
-		System.out.println("Sum1 = " + sum1);
-		System.out.println("------------summing only even no---------------");
-		int sum2 = list.stream().filter(n -> n % 2 == 0) // finding even no.
-				.collect(Collectors.summingInt(n -> n));
-		System.out.println("Sum2 = " + sum2);
+		/*
+		 * System.out
+		 * .println("------------Summing each element of list---------------"); int sum1
+		 * = list.stream().collect(Collectors.summingInt(n -> n));
+		 * 
+		 * System.out.println("Sum1 = " + sum1);
+		 * System.out.println("------------summing only even no---------------"); int
+		 * sum2 = list.stream().filter(n -> n % 2 == 0) // finding even no.
+		 * .collect(Collectors.summingInt(n -> n)); System.out.println("Sum2 = " +
+		 * sum2);
+		 */
 
 	}
 }

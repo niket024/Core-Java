@@ -1,0 +1,9 @@
+Marks are :
+89
+66
+88
+88
+99
+Total marks = 430
+ Average mark = 86
+ Congratulations!!! your passed

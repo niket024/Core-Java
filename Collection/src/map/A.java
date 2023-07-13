@@ -17,6 +17,7 @@ public static void main(String[] args)
 	map.put(123, 123);
 	map.put(null, null);
 	map.put(67.90, true);
+
 	System.out.println(map);
 	System.out.println(map.get("k2"));
 }

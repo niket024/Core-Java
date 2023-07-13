@@ -4,3 +4,7 @@ Access modifiers
 2.protected--in the same package or child class of different package
 3.default--only in same package
 4.public--any where in the workspace
+
+Rules:
+1. Class can never be private and protected
+2. In same class we can use all the access modifiers 

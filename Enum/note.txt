@@ -1,0 +1,1 @@
+Enum - It is a collection of constants

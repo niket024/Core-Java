@@ -10,7 +10,7 @@ public class F
 	public static void main(String[] args)
 	{
 		File f1 = new File(
-				"C:\\Users\\niket.kumar\\Pictures\\Screenshots\\test.png");
+				"C:\\Users\\niket.kumar\\Pictures\\Screenshots\\pic.png");
 		
 		File f2 = new File("test1.png");
 		FileInputStream fin = null;

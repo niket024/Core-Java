@@ -13,7 +13,6 @@ public class AgeNotNegativeException extends RuntimeException
 	@Override
 	public String getMessage()
 	{
-		new Thread();
 		super.getMessage();
 		return s1;
 	}

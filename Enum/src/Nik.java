@@ -25,7 +25,7 @@ public enum Nik {
 
 	public static void main(String[] args)
 	{
-		// Nik n1=new Nik();
+		 //Nik n1=new Nik();
 		Nik n = Nik.CON1;
 		CON1.test();
 		n.test1();

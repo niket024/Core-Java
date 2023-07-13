@@ -25,6 +25,7 @@ i=(int)d//explicit narrowing
 int i;
 i=90;
 
+int i = 90;
 
 class A
 {

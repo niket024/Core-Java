@@ -9,6 +9,7 @@ public class F extends Thread
 		System.out.println(t1.isDaemon());
 		System.out.println("----------------");
 		F f1 = new F();
+		
 		System.out.println(f1.getId());
 		System.out.println(f1.getName());
 		System.out.println(f1.getPriority());

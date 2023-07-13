@@ -53,10 +53,15 @@ It is thread safe without synchronizing the whole map.
 Reads can happen very fast while write is done with a lock.
 There is no locking at the object level.
 The locking is at a much finer granularity at a hashmap bucket level.
-ConcurrentHashMap doesn’t throw a ConcurrentModificationException if one thread tries to modify it while another is iterating over it.
+ConcurrentHashMap doesnï¿½t throw a ConcurrentModificationException if one thread tries to modify it while another is iterating over it.
 ConcurrentHashMap uses multitude of locks.
 
-
+Difference between ArrayList and Vector
+------------------------------------------
+1. ArrayList is not thread safe but vector is thread safe
+2. ArrayList is faster but vector is slow
+3. ArrayList is use iterator but vector use Enumeration
+4. ArrayList capacity increase by 50% but vector capacity increased by 100%
 Note:
 All classes of collection framework is overriding the
 3 methods of object class

@@ -8,7 +8,7 @@ public class Finally1
 		{
 			System.out.println("try");
 			int i = 10 / 0;
-			System.exit(0);
+			//System.exit(0);
 		} catch (ArithmeticException es)
 		{
 			System.out.println("catch");

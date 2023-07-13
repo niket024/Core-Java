@@ -1,6 +1,5 @@
 
-public  class D extends C
-{
+public class D extends C {
 
 	@Override
 	void test4() {
@@ -15,11 +14,11 @@ public  class D extends C
 	}
 
 	@Override
-	public void test2(int i) {
+	void test1() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	
-	
+
 }

@@ -10,6 +10,7 @@ public class E
 		
 		FileReader in = new FileReader("test1.txt");
 		BufferedReader bin = new BufferedReader(in);
+
 		String s1 = bin.readLine();
 		if (s1 == null)
 		{
