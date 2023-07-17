@@ -1,77 +1,50 @@
 package example;
 
-public class Employee implements Comparable
+public class Employee {
+	private int id;
+	private String name;
+	private int age;
+	private int salary;
 
-{
-	Integer id;
-	String name;
-	Integer age;
-
-	public Employee()
-	{
-
-	}
-
-	Employee(int id, String name, int age)
-	{
+	
+	public Employee(int id, String name, int age, int salary) {
+		super();
 		this.id = id;
 		this.name = name;
 		this.age = age;
-
+		this.salary = salary;
 	}
 
-	public Integer getId()
-	{
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Integer id)
-	{
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public String getName()
-	{
+	public String getName() {
 		return name;
 	}
 
-	public void setName(String name)
-	{
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	public Integer getAge()
-	{
+	public int getAge() {
 		return age;
 	}
 
-	public void setAge(Integer age)
-	{
+	public void setAge(int age) {
 		this.age = age;
 	}
 
-	@Override
-	public int compareTo(Object o)
-	{
-		Employee e = (Employee) o;
-		if (this.id > e.id)
-		{
-			return 1;
-		} else if (this.id < e.id)
-		{
-			return -1;
-		} else
-		{
-			return 0;
-		}
-
+	public int getSalary() {
+		return salary;
 	}
 
-	@Override
-	public String toString()
-	{
-
-		return this.id + " " + this.name + "" + this.age;
+	public void setSalary(int salary) {
+		this.salary = salary;
 	}
 
 }

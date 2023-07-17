@@ -15,23 +15,23 @@ public class DuplicateArray {
 		list.add(4);
 		list.add(6);
 		list.add(6);
+		System.out.println(list);
 		// 2=3, 3=1, 4=2, 6=2
-		Map<Integer, Integer> duplicateCount = getDuplicateCount(list);
-		System.out.println(duplicateCount);
+		Map<Integer, Integer> result = getDuplicateCounts(list);
+		System.out.println(result);
+
 	}
 
-	private static Map<Integer, Integer> getDuplicateCount(ArrayList<Integer> list) {
+	private static Map<Integer, Integer> getDuplicateCounts(ArrayList<Integer> list) {
 		Map<Integer, Integer> result = new HashMap<>();
-		for (int i = 0; i < list.size(); i++) {
-			int data = list.get(i);
-			if (result.containsKey(data)) {
-				int count = result.get(data);
-				result.put(data, count + 1);
+		for (Integer i : list) {
+			if (result.containsKey(i)) {
+				int count = result.get(i);
+				result.put(i, count + 1);
 			} else {
-				result.put(data, 1);
+				result.put(i, 1);
 			}
 		}
-
 		return result;
 	}
 

@@ -27,6 +27,8 @@ public class C
 		System.out.println(map);
 
 		Set<Integer> keys = map.keySet();
+		System.out.println(keys);
+		System.out.println(map.values());
 
 		Iterator<Integer> it = keys.iterator();
 		ArrayList<Integer> list = new ArrayList<Integer>();
@@ -36,7 +38,7 @@ public class C
 			list.add(map.get(it.next()));
 		}
 		Collections.sort(list);
-		System.out.println(map.values());
 		System.out.println(list);
+
 	}
 }
